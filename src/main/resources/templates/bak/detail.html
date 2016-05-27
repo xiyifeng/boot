@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>消息详细</title>
+</head>
+<body>
+	<h1 layout:fragment="header">Message</h1>
+	<div layout:fragment="content" class="container">
+		<div class="pull-right">
+			<a th:href="@{/}" href="compareList.html"> Messages </a>
+		</div>
+		<dl>
+			<dt>顺序号</dt>
+			<dd id="msgSeq" th:text="${fmtCode.msgSeq}">123</dd>
+			<dt>UUID</dt>
+			<dd id="uuid" th:text="${fmtCode.uuid}">123</dd>
+			<dt>请求时间</dt>
+			<dd id="requestTime" th:text="${fmtCode.requestTime}"></dd>
+			<dt>请求报文</dt>
+			<dd id="requestMsg" th:text="${fmtCode.requestMsg}"></dd>
+			<dt>响应时间</dt>
+			<dd id="responseTime" th:text="${fmtCode.responseTime}"></dd>
+			<dt>响应报文</dt>
+			<dd id="responseMsg" th:text="${fmtCode.responseMsg}"></dd>
+		</dl>
+		<div class="pull-left">
+			<a href="messages" th:href="@{'/'}">返回</a>
+		</div>
+	</div>
+</body>
+</html>

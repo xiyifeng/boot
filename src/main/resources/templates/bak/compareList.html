@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Messages : View all</title>
+<style type="text/css">
+table.hovertable {
+	font-family: verdana, arial, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+
+table.hovertable th {
+	background-color: #c3dde0;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+table.hovertable tr {
+	background-color: #d4e3e5;
+}
+
+table.hovertable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+</style>
+
+</head>
+<body>
+	<h1 layout:fragment="header">对比明细清单</h1>
+	<div layout:fragment="content" class="container">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>顺序号</td>
+					<td>UUID</td>
+					<td>交易码</td>
+					<td>请求时间</td>
+					<td>响应时间</td>
+					<td>状态</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${fmtCodes.empty}">
+					<td colspan="6">No messages</td>
+				</tr>
+				<tr th:each="fmtCode : ${fmtCodes}" style="backgroundColor:#d4e3e5;" 
+					onmouseover="this.style.backgroundColor='#ffff66';"
+					onmouseout="this.style.backgroundColor='#d4e3e5';">
+					<td th:text="${fmtCode.msgSeq}">1</td>
+					<td th:text="${fmtCode.uuid}">1233444444</td>
+					<td th:text="${fmtCode.tranCode}">1001</td>
+					<td th:text="${fmtCode.requestTime}">101010</td>
+					<td th:text="${fmtCode.responseTime}">101011</td>
+					<td th:text="${fmtCode.status}">1</td>
+					<td><a th:href="@{'/' + ${fmtCode.uuid}}" href="detail.html">详细</a>
+					</td>
+					<td><a th:href="@{'/cmp/' + ${fmtCode.uuid}}"
+						href="detail.html">对比结果</a></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="8" style="height:10px;">
+						<table style="width:100%;height:10px;border:0;">
+							<tr>
+								<td>总共 <B>2</B>记录</td>
+								<td>&nbsp;&nbsp;10 条记录/页&nbsp;&nbsp;</td>
+								<td>当前页:2/<B>1</B>
+								</td>
+								<td>&nbsp;转到</td>
+								<td align="right"><A href=""></A>
+								</td>
+								<td align="right"><A href=""></A>
+								</td>
+								<td align="right"><A href=""> </A>
+								</td>
+								<td align="right"><A href=""> </A>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- <IMG alt="下一页 " src="admin/images/next.gif" border="0" /> -->
+				<!-- <INPUT type="image" alt="转到" src="admin/images/page_go.gif" /> -->
+			</tfoot>
+		</table>
+	</div>
+</body>
+</html>

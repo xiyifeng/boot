@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqrcb.boot.domain.FmtCode">
+
+	<select id="selectEverPage" parameterType="com.cqrcb.boot.domain.FmtCode"
+		resultType="com.cqrcb.boot.domain.FmtCode">
+		select * from H_FMT_CODE
+		<if test="diffCode != null and diffCode != ''">
+			where diffCode = #{diffCode}
+		</if>
+		limit #{startRow},#{rows}
+	</select>
+
+	<select id="selectAll" resultType="com.cqrcb.boot.domain.FmtCode">
+		select * from H_FMT_CODE
+	</select>
+
+	<select id="selectByPrimaryKey" resultType="com.cqrcb.boot.domain.FmtCode"
+		parameterType="string">
+		select * from
+		H_FMT_CODE where uuid = #{uuid}
+	</select>
+
+	<select id="selectTotalSize" resultType="int">
+		select count(1) from H_FMT_CODE
+		<if test="diffCode != null and diffCode != ''">
+			where diffCode = #{diffCode}
+		</if>
+	</select>
+
+</mapper>

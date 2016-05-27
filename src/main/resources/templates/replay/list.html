@@ -1,0 +1,113 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="content">
+<head>
+<title>回放服务</title>
+</head>
+<body>
+	<div layout:fragment="content" class="container"
+		style="height:400px;width:600px;margin: 1px 1px 1px 1px;">
+		<table id="dg"></table>
+		<form id="conds">
+			<table>
+				<tr>
+					<td style="width:60px;"><p align="center">对比结果</p></td>
+					<td><input id="diffCode" class="easyui-combobox"
+						name="diffCode"
+						data-options="valueField:'id',textField:'text',value:'1',data:[{'id':1,'text':'1-相同'},{'id':2,'text':'2-不同'}]" />
+					</td>
+					<td><a id="searchId" href="javascript:doFind();"
+						class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+					</td>
+					<td><a id="helpId" href="javascript:help();"
+						class="easyui-linkbutton" data-options="iconCls:'icon-help'">帮助</a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+			$(function() {
+				$('#dg').datagrid({
+					url : '',
+					iconCls : 'icon-save',
+					width : 1200,
+					height : 450,
+					fitColumns : true,
+					singleSelect : true,
+					striped : false,
+					method : "post",
+					loadMsg : "数据加载中",
+					pagination : true,
+					rownumbers : true,
+					singleSelect : true,
+					pagePosition : "bottom",
+					toolbar : "#conds",
+					columns : [ [ {
+						field : 'uuid',
+						title : 'UUID',
+						width : 100
+					}, {
+						field : 'msgSeq',
+						title : '顺序号',
+						width : 80
+					}, {
+						field : 'tranCode',
+						title : '交易码',
+						width : 100,
+						align : 'right'
+					}, {
+						field : 'requestTime',
+						title : '请求时间',
+						width : 150,
+						align : 'right'
+					}, {
+						field : 'responseTime',
+						title : '响应时间',
+						width : 150
+					}, {
+						field : 'status',
+						title : '状态',
+						width : 60,
+						align : 'center'
+					}, {
+						field : 'diffCode',
+						title : '对比结果',
+						width : 60,
+						align : 'center'
+					} ] ],
+					onDblClickRow : function(rowIndex, rowData) {
+						showDetail(rowData.uuid);
+					}
+				});
+			});
+
+			function doFind() {
+				var o = serializeObject("#conds");
+				$("#dg").datagrid({
+					queryParams : o,
+					url : "/replay/list.json"
+				});
+			}
+
+			// 详细信息展示
+			function showDetail(uuid) {
+				window.parent.$("#childUse").window({
+					title : "比对结果详细",
+					width : 1100,
+					height : 500,
+					collapsible : false,
+					modal : true,
+					inline : false,
+					href : "/replay/detail/"+uuid
+				});
+			}
+
+			function help() {
+				$.messager.alert('提示', '有一种爱，叫死去活来！', 'info');
+			}
+		</script>
+		<div id="win"></div>
+	</div>
+
+</body>
+</html>

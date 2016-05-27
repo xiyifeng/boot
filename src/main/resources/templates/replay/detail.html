@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="content">
+<head>
+<title>报文对比结果</title>
+</head>
+<body>
+	<div layout:fragment="content" style="margin: 2% 10% 2% 10% ;">
+		<table>
+			<tr>
+				<th align="center">原核心响应报文</th>
+				<th align="center">新核心响应报文</th>
+			</tr>
+			<tr>
+				<td align="right"><input class="easyui-textbox"
+					th:value="${fmtCode.responseMsg}" name="responseMsg"
+					data-options="multiline:true" style="height:150px;width:450px;"></input>
+				</td>
+				<td align="left"><input class="easyui-textbox"
+					th:value="${fmtCode.newResponseMsg}" name="newResponseMsg"
+					data-options="multiline:true" style="height:150px;width:450px;"></input>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2" align="center">比对结果</th>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<input class="easyui-textbox" th:value="${fmtCode.compResult}"
+					name="compResult" data-options="multiline:true"
+					style="height:150px;width:900px;"></input>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
