@@ -16,14 +16,12 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 public class MyCommentGennerator implements CommentGenerator {
 
 	@Override
-	public void addClassComment(InnerClass arg0, IntrospectedTable arg1) {
-
+	public void addClassComment(InnerClass innerClass, IntrospectedTable table) {
 	}
 
 	@Override
-	public void addClassComment(InnerClass arg0, IntrospectedTable arg1,
+	public void addClassComment(InnerClass innerClass, IntrospectedTable table,
 			boolean arg2) {
-
 	}
 
 	@Override

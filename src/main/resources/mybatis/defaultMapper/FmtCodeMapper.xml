@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.defaultMapper.FmtCodeMapper">
+  <resultMap id="BaseResultMap" type="com.cqrcb.boot.generator.model.FmtCode">
+    <id column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="tranCode" jdbcType="VARCHAR" property="trancode" />
+    <result column="msgSeq" jdbcType="INTEGER" property="msgseq" />
+    <result column="requestTime" jdbcType="VARCHAR" property="requesttime" />
+    <result column="responseTime" jdbcType="VARCHAR" property="responsetime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="diffCode" jdbcType="VARCHAR" property="diffcode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uuid, tranCode, msgSeq, requestTime, responseTime, status, diffCode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from h_fmt_code
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from h_fmt_code
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    insert into h_fmt_code (uuid, tranCode, msgSeq, 
+      requestTime, responseTime, status, 
+      diffCode)
+    values (#{uuid,jdbcType=VARCHAR}, #{trancode,jdbcType=VARCHAR}, #{msgseq,jdbcType=INTEGER}, 
+      #{requesttime,jdbcType=VARCHAR}, #{responsetime,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{diffcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    insert into h_fmt_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        uuid,
+      </if>
+      <if test="trancode != null">
+        tranCode,
+      </if>
+      <if test="msgseq != null">
+        msgSeq,
+      </if>
+      <if test="requesttime != null">
+        requestTime,
+      </if>
+      <if test="responsetime != null">
+        responseTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="diffcode != null">
+        diffCode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="trancode != null">
+        #{trancode,jdbcType=VARCHAR},
+      </if>
+      <if test="msgseq != null">
+        #{msgseq,jdbcType=INTEGER},
+      </if>
+      <if test="requesttime != null">
+        #{requesttime,jdbcType=VARCHAR},
+      </if>
+      <if test="responsetime != null">
+        #{responsetime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="diffcode != null">
+        #{diffcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    update h_fmt_code
+    <set>
+      <if test="trancode != null">
+        tranCode = #{trancode,jdbcType=VARCHAR},
+      </if>
+      <if test="msgseq != null">
+        msgSeq = #{msgseq,jdbcType=INTEGER},
+      </if>
+      <if test="requesttime != null">
+        requestTime = #{requesttime,jdbcType=VARCHAR},
+      </if>
+      <if test="responsetime != null">
+        responseTime = #{responsetime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="diffcode != null">
+        diffCode = #{diffcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    update h_fmt_code
+    set tranCode = #{trancode,jdbcType=VARCHAR},
+      msgSeq = #{msgseq,jdbcType=INTEGER},
+      requestTime = #{requesttime,jdbcType=VARCHAR},
+      responseTime = #{responsetime,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      diffCode = #{diffcode,jdbcType=VARCHAR}
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.cqrcb.boot.generator.model.FmtCode">
+    <id column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="tranCode" jdbcType="VARCHAR" property="trancode" />
+    <result column="msgSeq" jdbcType="INTEGER" property="msgseq" />
+    <result column="requestTime" jdbcType="VARCHAR" property="requesttime" />
+    <result column="responseTime" jdbcType="VARCHAR" property="responsetime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="diffCode" jdbcType="VARCHAR" property="diffcode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uuid, tranCode, msgSeq, requestTime, responseTime, status, diffCode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from h_fmt_code
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from h_fmt_code
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    insert into h_fmt_code (uuid, tranCode, msgSeq, 
+      requestTime, responseTime, status, 
+      diffCode)
+    values (#{uuid,jdbcType=VARCHAR}, #{trancode,jdbcType=VARCHAR}, #{msgseq,jdbcType=INTEGER}, 
+      #{requesttime,jdbcType=VARCHAR}, #{responsetime,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{diffcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    insert into h_fmt_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        uuid,
+      </if>
+      <if test="trancode != null">
+        tranCode,
+      </if>
+      <if test="msgseq != null">
+        msgSeq,
+      </if>
+      <if test="requesttime != null">
+        requestTime,
+      </if>
+      <if test="responsetime != null">
+        responseTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="diffcode != null">
+        diffCode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uuid != null">
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="trancode != null">
+        #{trancode,jdbcType=VARCHAR},
+      </if>
+      <if test="msgseq != null">
+        #{msgseq,jdbcType=INTEGER},
+      </if>
+      <if test="requesttime != null">
+        #{requesttime,jdbcType=VARCHAR},
+      </if>
+      <if test="responsetime != null">
+        #{responsetime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="diffcode != null">
+        #{diffcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    update h_fmt_code
+    <set>
+      <if test="trancode != null">
+        tranCode = #{trancode,jdbcType=VARCHAR},
+      </if>
+      <if test="msgseq != null">
+        msgSeq = #{msgseq,jdbcType=INTEGER},
+      </if>
+      <if test="requesttime != null">
+        requestTime = #{requesttime,jdbcType=VARCHAR},
+      </if>
+      <if test="responsetime != null">
+        responseTime = #{responsetime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="diffcode != null">
+        diffCode = #{diffcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cqrcb.boot.generator.model.FmtCode">
+    update h_fmt_code
+    set tranCode = #{trancode,jdbcType=VARCHAR},
+      msgSeq = #{msgseq,jdbcType=INTEGER},
+      requestTime = #{requesttime,jdbcType=VARCHAR},
+      responseTime = #{responsetime,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      diffCode = #{diffcode,jdbcType=VARCHAR}
+    where uuid = #{uuid,jdbcType=VARCHAR}
+  </update>
+</mapper>
