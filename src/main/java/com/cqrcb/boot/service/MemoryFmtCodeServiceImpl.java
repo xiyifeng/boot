@@ -35,7 +35,7 @@ public class MemoryFmtCodeServiceImpl implements FmtCodeService {
 	@Override
 	public List<FmtCode> findAll() {
 		FmtCode fmtCode = new FmtCode();
-		fmtCode.randomInit();
+//		fmtCode.randomInit();
 		fmtCodes.put(fmtCode.getUuid(), fmtCode);
 		return new ArrayList<FmtCode>(fmtCodes.values());
 	}
@@ -53,7 +53,7 @@ public class MemoryFmtCodeServiceImpl implements FmtCodeService {
 	@Override
 	public FmtCode findFmtCode(String uuid) {
 		FmtCode fmtCode = new FmtCode();
-		fmtCode.randomInit();
+//		fmtCode.randomInit();
 		return fmtCode;
 	}
 
@@ -65,7 +65,7 @@ public class MemoryFmtCodeServiceImpl implements FmtCodeService {
 	@Override
 	public void passFmtCode(String uuid) {
 		FmtCode fmtCode = fmtCodes.get(uuid);
-		fmtCode.setDiffCode("1");
+//		fmtCode.setDiffCode("1");
 	}
 
 	@Override

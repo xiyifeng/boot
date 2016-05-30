@@ -29,7 +29,7 @@
 			<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" /> 
 		-->
 	<!-- 用来生成注释 1. suppressAllComments 默认是false 此属性用于指定在生成的代码是否将包括任何注释。如果设置为true 
-		则不生成注释 2. suppressDate 默认是false 此属性用于指定在生成的注释是否将包括MBG代时间戳。 -->
+		则不生成注释 2. suppressDate 默认是false 此属性用于指定在生成的注释是否将包括MBG代时间戳。  -->
 	<commentGenerator type="com.cqrcb.boot.generator.MyCommentGennerator">
 		<property name="javaFileEncoding" value="UTF-8"/>
 		<property name="suppressAllComments" value="true" />
@@ -71,7 +71,10 @@
 			    此属性用于选择是否MyBatis生成器添加代码来修剪的白色空间从字符字段从数据库返回的。这可以是很有用的,如果您的数据库将数据存储在字符字段而不是VARCHAR字段。当真正的,MyBatis生成器将插入代码来削减字符字段。 
 			    默认值是false。 
 	     --> 
-	    <javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}" /> 
+	    <javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}" >
+	    	<property name="trimStrings" value="true"/>
+            <property name="rootClass" value="com.cqrcb.boot.domain.page.PageBase"/>
+	    </javaModelGenerator> 
 	    <!-- 生成用于查询的Example对象 --> 
 	    <sqlMapGenerator targetPackage="${sqlMapperPackage}" targetProject="${targetProjectMapper}" /> 
 	    <!-- 生成DAO的类文件以及配置文件 --> 
@@ -130,6 +133,30 @@
             enableUpdateByExample="false"> 
 	    </table> 
 	    <table tableName="h_user" domainObjectName="User" enableInsert="true"  
+            enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
+            enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
+            enableDeleteByExample="false" enableCountByExample="false"  
+            enableUpdateByExample="false"> 
+	    </table>
+	    <table tableName="h_right" domainObjectName="Right" enableInsert="true"  
+            enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
+            enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
+            enableDeleteByExample="false" enableCountByExample="false"  
+            enableUpdateByExample="false"> 
+	    </table>
+	    <table tableName="h_role" domainObjectName="Role" enableInsert="true"  
+            enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
+            enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
+            enableDeleteByExample="false" enableCountByExample="false"  
+            enableUpdateByExample="false"> 
+	    </table>
+	    <table tableName="h_role_right" domainObjectName="RoleRight" enableInsert="true"  
+            enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
+            enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
+            enableDeleteByExample="false" enableCountByExample="false"  
+            enableUpdateByExample="false"> 
+	    </table>
+	    <table tableName="h_user_role" domainObjectName="UserRole" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  

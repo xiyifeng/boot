@@ -1,12 +1,16 @@
 package com.cqrcb.boot.domain.page;
 
+import java.io.Serializable;
+
 /**
  * 分页基类
  * 
  * @author xiyifeng
  * @date 2016-5-25
  */
-public class PageBase {
+public class PageBase implements Serializable {
+
+	private static final long serialVersionUID = 4330399132946718352L;
 
 	// 每页显示的记录数
 	private int rows;

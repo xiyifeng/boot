@@ -1,6 +1,8 @@
 package com.cqrcb.boot.generator;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 import org.mybatis.generator.api.CommentGenerator;
@@ -72,8 +74,16 @@ public class MyCommentGennerator implements CommentGenerator {
 	}
 
 	@Override
-	public void addJavaFileComment(CompilationUnit arg0) {
-
+	public void addJavaFileComment(CompilationUnit compilationUnit) {
+		compilationUnit.addFileCommentLine("/**");
+		compilationUnit.addFileCommentLine("* ");
+		compilationUnit.addFileCommentLine("* " + compilationUnit.getType().getShortName()+".java");
+		compilationUnit.addFileCommentLine("* Copyright(c) 2015-2020 ");
+		compilationUnit.addFileCommentLine("* All Rights reserved. ");
+		compilationUnit.addFileCommentLine("* -----------------------------------");
+		compilationUnit.addFileCommentLine("* " + new SimpleDateFormat("yyyy-MM-dd").format(new Date()) + "creadted ");
+		compilationUnit.addFileCommentLine("* @Auther xiyifeng");
+		compilationUnit.addFileCommentLine("*/");
 	}
 
 	@Override

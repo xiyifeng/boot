@@ -1,91 +1,157 @@
+/**
+* 
+* User.java
+* Copyright(c) 2015-2020 
+* All Rights reserved. 
+* -----------------------------------
+* 2016-05-30creadted 
+* @Auther xiyifeng
+*/
 package com.cqrcb.boot.domain;
 
-/**
- * 用户
- * 
- * @author xiyifeng
- * @date 2016-5-27
- */
-public class User {
-	// 用户编码
-	private String userCode;
-	// 用户名称
-	private String userName;
-	// 用户密码
-	private String password;
-	// 职位
-	private String position;
-	// 邮箱
-	private String email;
-	// 移动电话
-	private String mobilPhone;
-	// 状态
-	private String status;
-	// 备注
-	private String remark;
+import com.cqrcb.boot.domain.page.PageBase;
 
-	public String getUserCode() {
-		return userCode;
-	}
+public class User extends PageBase {
+    /**
+     * 用户代码
+     */
+    private String userCode;
 
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
+    /**
+     * 用户名称
+     */
+    private String userName;
 
-	public String getUserName() {
-		return userName;
-	}
+    /**
+     * 密码
+     */
+    private String password;
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    /**
+     * 职位
+     */
+    private String position;
 
-	public String getPassword() {
-		return password;
-	}
+    /**
+     * 邮箱
+     */
+    private String email;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    /**
+     * 移动号码
+     */
+    private String mobilPhone;
 
-	public String getPosition() {
-		return position;
-	}
+    /**
+     * 状�?(1-正常 2-锁定 3-失效)
+     */
+    private String status;
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+    /**
+     * 语言
+     */
+    private String lang;
 
-	public String getEmail() {
-		return email;
-	}
+    /**
+     * 主题
+     */
+    private String theme;
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    /**
+     * 登陆错误连续失败次数
+     */
+    private Integer errorLoginTimes;
 
-	public String getMobilPhone() {
-		return mobilPhone;
-	}
+    /**
+     * 备注
+     */
+    private String remark;
 
-	public void setMobilPhone(String mobilPhone) {
-		this.mobilPhone = mobilPhone;
-	}
+    public String getUserCode() {
+        return userCode;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setUserCode(String userCode) {
+        this.userCode = userCode == null ? null : userCode.trim();
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position == null ? null : position.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public String getMobilPhone() {
+        return mobilPhone;
+    }
+
+    public void setMobilPhone(String mobilPhone) {
+        this.mobilPhone = mobilPhone == null ? null : mobilPhone.trim();
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang == null ? null : lang.trim();
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme == null ? null : theme.trim();
+    }
+
+    public Integer getErrorLoginTimes() {
+        return errorLoginTimes;
+    }
+
+    public void setErrorLoginTimes(Integer errorLoginTimes) {
+        this.errorLoginTimes = errorLoginTimes;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
 }

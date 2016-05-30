@@ -1,159 +1,105 @@
+/**
+* 
+* FmtCode.java
+* Copyright(c) 2015-2020 
+* All Rights reserved. 
+* -----------------------------------
+* 2016-05-30creadted 
+* @Auther xiyifeng
+*/
 package com.cqrcb.boot.domain;
-
-import java.io.Serializable;
-import java.util.Date;
-import java.util.Random;
-import java.util.UUID;
 
 import com.cqrcb.boot.domain.page.PageBase;
 
-/**
- * 报文暂存表
- * 
- * @author Administrator
- * 
- */
-public class FmtCode extends PageBase implements Serializable {
-	private static final long serialVersionUID = -5101919464351554453L;
-	private String uuid;
-	private String tranCode;
-	private int msgSeq;
-	private String requestTime;
-	private String responseTime;
-	private String requestMsg;
-	private String newResponseMsg;
-	private String responseMsg;
-	private String status;
-	private String diffCode;
-	private String compResult;
+public class FmtCode extends PageBase {
+    /**
+     * UUID
+     */
+    private String uuid;
 
-	public String getNewResponseMsg() {
-		return newResponseMsg;
-	}
+    /**
+     * 交易
+     */
+    private String trancode;
 
-	public void setNewResponseMsg(String newResponseMsg) {
-		this.newResponseMsg = newResponseMsg;
-	}
+    /**
+     * 顺序号码
+     */
+    private Integer msgseq;
 
-	public String getCompResult() {
-		return compResult;
-	}
+    /**
+     * 请求时间
+     */
+    private String requesttime;
 
-	public void setCompResult(String compResult) {
-		this.compResult = compResult;
-	}
+    /**
+     * 响应时间
+     */
+    private String responsetime;
 
-	public String getUuid() {
-		return uuid;
-	}
+    /**
+     * 状�?
+     */
+    private String status;
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
+    /**
+     * 是否存在差异
+     */
+    private String diffcode;
 
-	public String getTranCode() {
-		return tranCode;
-	}
+    public String getUuid() {
+        return uuid;
+    }
 
-	public void setTranCode(String tranCode) {
-		this.tranCode = tranCode;
-	}
+    public void setUuid(String uuid) {
+        this.uuid = uuid == null ? null : uuid.trim();
+    }
 
-	public int getMsgSeq() {
-		return msgSeq;
-	}
+    public String getTrancode() {
+        return trancode;
+    }
 
-	public void setMsgSeq(int msgSeq) {
-		this.msgSeq = msgSeq;
-	}
+    public void setTrancode(String trancode) {
+        this.trancode = trancode == null ? null : trancode.trim();
+    }
 
-	public String getRequestTime() {
-		return requestTime;
-	}
+    public Integer getMsgseq() {
+        return msgseq;
+    }
 
-	public void setRequestTime(String requestTime) {
-		this.requestTime = requestTime;
-	}
+    public void setMsgseq(Integer msgseq) {
+        this.msgseq = msgseq;
+    }
 
-	public String getResponseTime() {
-		return responseTime;
-	}
+    public String getRequesttime() {
+        return requesttime;
+    }
 
-	public void setResponseTime(String responseTime) {
-		this.responseTime = responseTime;
-	}
+    public void setRequesttime(String requesttime) {
+        this.requesttime = requesttime == null ? null : requesttime.trim();
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public String getResponsetime() {
+        return responsetime;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public void setResponsetime(String responsetime) {
+        this.responsetime = responsetime == null ? null : responsetime.trim();
+    }
 
-	public String getDiffCode() {
-		return diffCode;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public void setDiffCode(String diffCode) {
-		this.diffCode = diffCode;
-	}
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
+    }
 
-	public FmtCode(String uuid, String tranCode, int msgSeq,
-			String requestTime, String responseTime, String status,
-			String diffCode) {
-		super();
-		this.uuid = uuid;
-		this.tranCode = tranCode;
-		this.msgSeq = msgSeq;
-		this.requestTime = requestTime;
-		this.responseTime = responseTime;
-		this.status = status;
-		this.diffCode = diffCode;
-	}
+    public String getDiffcode() {
+        return diffcode;
+    }
 
-	public String getRequestMsg() {
-		return requestMsg;
-	}
-
-	public void setRequestMsg(String requestMsg) {
-		this.requestMsg = requestMsg;
-	}
-
-	public String getResponseMsg() {
-		return responseMsg;
-	}
-
-	public void setResponseMsg(String responseMsg) {
-		this.responseMsg = responseMsg;
-	}
-
-	public FmtCode() {
-		super();
-	}
-
-	/**
-	 * 测试用，随机生成
-	 */
-	public void randomInit() {
-		Random random = new Random();
-		this.uuid = UUID.randomUUID().toString();
-		this.tranCode = "1000" + random.nextInt(10);
-		this.msgSeq = 1000 + random.nextInt();
-		this.requestTime = new Date().getTime() + "";
-		this.responseTime = requestTime;
-		this.status = "1";
-		this.diffCode = "2";
-	}
-
-	@Override
-	public String toString() {
-		return "FmtCode [uuid=" + uuid + ", tranCode=" + tranCode + ", msgSeq="
-				+ msgSeq + ", requestTime=" + requestTime + ", responseTime="
-				+ responseTime + ", requestMsg=" + requestMsg
-				+ ", newResponseMsg=" + newResponseMsg + ", responseMsg="
-				+ responseMsg + ", status=" + status + ", diffCode=" + diffCode
-				+ ", compResult=" + compResult + "]" + super.toString();
-	}
-
+    public void setDiffcode(String diffcode) {
+        this.diffcode = diffcode == null ? null : diffcode.trim();
+    }
 }

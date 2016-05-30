@@ -47,9 +47,9 @@ public class ReplayController {
 		logger.debug("传入参数: " + uuid);
 		FmtCode fmtCode = fmtCodeService.findFmtCode(uuid);
 
-		fmtCode.setResponseMsg(crtData());
-		fmtCode.setNewResponseMsg(fmtCode.getResponseMsg());
-		fmtCode.setCompResult(fmtCode.getResponseMsg());
+		// fmtCode.setResponseMsg(crtData());
+		// fmtCode.setNewResponseMsg(fmtCode.getResponseMsg());
+		// fmtCode.setCompResult(fmtCode.getResponseMsg());
 		
 		modelMap.addAttribute("fmtCode", fmtCode);
 		return "replay/detail";
