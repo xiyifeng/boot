@@ -2,7 +2,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
 	layout:decorator="content">
 <head>
-<title>»Ø·Å·şÎñ</title>
+<title>å›æ”¾æœåŠ¡</title>
 </head>
 <body>
 	<div layout:fragment="content" class="container"
@@ -11,16 +11,16 @@
 		<form id="conds">
 			<table>
 				<tr>
-					<td style="width:60px;"><p align="center">¶Ô±È½á¹û</p></td>
+					<td style="width:60px;"><p align="center">å¯¹æ¯”ç»“æœ</p></td>
 					<td><input id="diffCode" class="easyui-combobox"
 						name="diffCode"
-						data-options="valueField:'id',textField:'text',value:'1',data:[{'id':1,'text':'1-ÏàÍ¬'},{'id':2,'text':'2-²»Í¬'}]" />
+						data-options="valueField:'id',textField:'text',value:'1',data:[{'id':1,'text':'1-ç›¸åŒ'},{'id':2,'text':'2-ä¸åŒ'}]" />
 					</td>
 					<td><a id="searchId" href="javascript:doFind();"
-						class="easyui-linkbutton" data-options="iconCls:'icon-search'">²éÑ¯</a>
+						class="easyui-linkbutton" data-options="iconCls:'icon-search'">æŸ¥è¯¢</a>
 					</td>
 					<td><a id="helpId" href="javascript:help();"
-						class="easyui-linkbutton" data-options="iconCls:'icon-help'">°ïÖú</a>
+						class="easyui-linkbutton" data-options="iconCls:'icon-help'">å¸®åŠ©</a>
 					</td>
 				</tr>
 			</table>
@@ -36,7 +36,7 @@
 					singleSelect : true,
 					striped : false,
 					method : "post",
-					loadMsg : "Êı¾İ¼ÓÔØÖĞ",
+					loadMsg : "æ•°æ®åŠ è½½ä¸­",
 					pagination : true,
 					rownumbers : true,
 					singleSelect : true,
@@ -48,30 +48,30 @@
 						width : 100
 					}, {
 						field : 'msgSeq',
-						title : 'Ë³ĞòºÅ',
+						title : 'é¡ºåºå·',
 						width : 80
 					}, {
 						field : 'tranCode',
-						title : '½»Ò×Âë',
+						title : 'äº¤æ˜“ç ',
 						width : 100,
 						align : 'right'
 					}, {
 						field : 'requestTime',
-						title : 'ÇëÇóÊ±¼ä',
+						title : 'è¯·æ±‚æ—¶é—´',
 						width : 150,
 						align : 'right'
 					}, {
 						field : 'responseTime',
-						title : 'ÏìÓ¦Ê±¼ä',
+						title : 'å“åº”æ—¶é—´',
 						width : 150
 					}, {
 						field : 'status',
-						title : '×´Ì¬',
+						title : 'çŠ¶æ€',
 						width : 60,
 						align : 'center'
 					}, {
 						field : 'diffCode',
-						title : '¶Ô±È½á¹û',
+						title : 'å¯¹æ¯”ç»“æœ',
 						width : 60,
 						align : 'center'
 					} ] ],
@@ -89,10 +89,10 @@
 				});
 			}
 
-			// ÏêÏ¸ĞÅÏ¢Õ¹Ê¾
+			// è¯¦ç»†ä¿¡æ¯å±•ç¤º
 			function showDetail(uuid) {
 				window.parent.$("#childUse").window({
-					title : "±È¶Ô½á¹ûÏêÏ¸",
+					title : "æ¯”å¯¹ç»“æœè¯¦ç»†",
 					width : 1100,
 					height : 500,
 					collapsible : false,
@@ -103,7 +103,7 @@
 			}
 
 			function help() {
-				$.messager.alert('ÌáÊ¾', 'ÓĞÒ»ÖÖ°®£¬½ĞËÀÈ¥»îÀ´£¡', 'info');
+				$.messager.alert('æç¤º', 'æœ‰ä¸€ç§çˆ±ï¼Œå«æ­»å»æ´»æ¥ï¼', 'info');
 			}
 		</script>
 		<div id="win"></div>

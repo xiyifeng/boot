@@ -34,7 +34,7 @@
 	<div data-options="region:'north',height:'98px'">
 		<div style="position: absolute; right: 5px; bottom: 2px;">
 			<a href="javascript:void(0);" class="easyui-menubutton"
-				menu="#layout_north_zxMenu" iconCls="icon-large-picture">ע��</a>
+				menu="#layout_north_zxMenu" iconCls="icon-large-picture">注销</a>
 		</div>
 		<div style="position:relative;">
 			<img th:src="@{/css/icons/logo.jpg}"
@@ -44,41 +44,41 @@
 				height="80px" width="897.8px" />
 		</div>
 		<div id="layout_north_zxMenu" style="width: 80px; display: none;">
-			<div onclick="modify();" data-option="iconCls:icon-large-picture">�޸�����</div>
+			<div onclick="modify();" data-option="iconCls:icon-large-picture">修改密码</div>
 			<div class="menu-sep"></div>
-			<div onclick="logout();" data-option="iconCls:icon-large-picture">���µ�¼</div>
-			<div onclick="logout(true);" data-option="iconCls:icon-large-picture">�˳�ϵͳ</div>
+			<div onclick="logout();" data-option="iconCls:icon-large-picture">重新登录</div>
+			<div onclick="logout(true);" data-option="iconCls:icon-large-picture">退出系统</div>
 		</div>
 	</div>
 	<div
 		data-options="region:'west',split:true,hideCollapsedContent:false,collapsible:false"
-		title="Ŀ¼"
+		title="目录"
 		style="width:130px;margin:1px 1px 1px 1px;padding:0px 0px 0px 0px;">
 		<div layout:fragment="menu" class="easyui-accordion"
 			style="height:500px;">
-			<div title="�ȶԲ�ѯ" iconCls="icon-sum" selected="true"
+			<div title="比对查询" iconCls="icon-sum" selected="true"
 				style="overflow:auto;padding:10px;">
-				<a href="javascript:addItem('���ıȶ�','/replay','icon-large-picture');"
+				<a href="javascript:addItem('报文比对','/replay','icon-large-picture');"
 					class="easyui-linkbutton"
 					style="width:88px;margin:0px 0px 5px 0px;"
-					data-options="iconCls:'icon-large-chart',size:'large',iconAlign:'top'">���ıȶ�</a>
+					data-options="iconCls:'icon-large-chart',size:'large',iconAlign:'top'">报文比对</a>
 			</div>
-			<div title="����ͳ��" iconCls="icon-sum"
+			<div title="数据统计" iconCls="icon-sum"
 				style="padding:10px;">
-				<a href="javascript:addItem('����ͳ��','/replay','icon-large-picture');"
+				<a href="javascript:addItem('差异统计','/replay','icon-large-picture');"
 					class="easyui-linkbutton"
 					style="width:88px;margin:0px 0px 5px 0px;"
-					data-options="iconCls:'icon-large-picture',size:'large',iconAlign:'top'">����ͳ��</a>
-				<a href="javascript:addItem('����ͳ��','/replay','icon-large-picture');"
+					data-options="iconCls:'icon-large-picture',size:'large',iconAlign:'top'">差异统计</a>
+				<a href="javascript:addItem('分类统计','/replay','icon-large-picture');"
 					class="easyui-linkbutton"
 					style="width:88px;margin:0px 0px 5px 0px;"
-					data-options="iconCls:'icon-large-chart',size:'large',iconAlign:'top'">����ͳ��</a>
+					data-options="iconCls:'icon-large-chart',size:'large',iconAlign:'top'">分类统计</a>
 			</div>
-			<div title="���ݷ���" iconCls="icon-sum" style="padding:10px;">
-				<a href="javascript:addItem('�ṹ����','/replay','icon-large-picture');"
+			<div title="数据分析" iconCls="icon-sum" style="padding:10px;">
+				<a href="javascript:addItem('结构分析','/replay','icon-large-picture');"
 					class="easyui-linkbutton"
 					style="width:88px;margin:0px 0px 5px 0px;"
-					data-options="iconCls:'icon-large-picture',size:'large',iconAlign:'top'">�ṹ����</a>
+					data-options="iconCls:'icon-large-picture',size:'large',iconAlign:'top'">结构分析</a>
 			</div>
 		</div>
 	</div>
