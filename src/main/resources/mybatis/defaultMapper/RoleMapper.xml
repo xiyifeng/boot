@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mybatis.defaultMapper.RoleMapper" >
   <resultMap id="BaseResultMap" type="com.cqrcb.boot.domain.Role" >
-    <id column="roleCode" property="rolecode" jdbcType="INTEGER" />
-    <result column="roleName" property="rolename" jdbcType="VARCHAR" />
+    <id column="roleCode" property="roleCode" jdbcType="INTEGER" />
+    <result column="roleName" property="roleName" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="creater" property="creater" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="create_time" property="create_time" jdbcType="VARCHAR" />
     <result column="modifyer" property="modifyer" jdbcType="VARCHAR" />
-    <result column="modify_time" property="modifyTime" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modify_time" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     roleCode, roleName, remark, creater, create_time, modifyer, modify_time
@@ -17,27 +17,27 @@
     select 
     <include refid="Base_Column_List" />
     from h_role
-    where roleCode = #{rolecode,jdbcType=INTEGER}
+    where roleCode = #{roleCode,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from h_role
-    where roleCode = #{rolecode,jdbcType=INTEGER}
+    where roleCode = #{roleCode,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cqrcb.boot.domain.Role" >
     insert into h_role (roleCode, roleName, remark, 
       creater, create_time, modifyer, 
       modify_time)
-    values (#{rolecode,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{modifyer,jdbcType=VARCHAR}, 
-      #{modifyTime,jdbcType=VARCHAR})
+    values (#{roleCode,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{creater,jdbcType=VARCHAR}, #{create_time,jdbcType=VARCHAR}, #{modifyer,jdbcType=VARCHAR}, 
+      #{modify_time,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cqrcb.boot.domain.Role" >
     insert into h_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="rolecode != null" >
+      <if test="roleCode != null" >
         roleCode,
       </if>
-      <if test="rolename != null" >
+      <if test="roleName != null" >
         roleName,
       </if>
       <if test="remark != null" >
@@ -46,22 +46,22 @@
       <if test="creater != null" >
         creater,
       </if>
-      <if test="createTime != null" >
+      <if test="create_time != null" >
         create_time,
       </if>
       <if test="modifyer != null" >
         modifyer,
       </if>
-      <if test="modifyTime != null" >
+      <if test="modify_time != null" >
         modify_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="rolecode != null" >
-        #{rolecode,jdbcType=INTEGER},
+      <if test="roleCode != null" >
+        #{roleCode,jdbcType=INTEGER},
       </if>
-      <if test="rolename != null" >
-        #{rolename,jdbcType=VARCHAR},
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -69,22 +69,22 @@
       <if test="creater != null" >
         #{creater,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=VARCHAR},
+      <if test="create_time != null" >
+        #{create_time,jdbcType=VARCHAR},
       </if>
       <if test="modifyer != null" >
         #{modifyer,jdbcType=VARCHAR},
       </if>
-      <if test="modifyTime != null" >
-        #{modifyTime,jdbcType=VARCHAR},
+      <if test="modify_time != null" >
+        #{modify_time,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cqrcb.boot.domain.Role" >
     update h_role
     <set >
-      <if test="rolename != null" >
-        roleName = #{rolename,jdbcType=VARCHAR},
+      <if test="roleName != null" >
+        roleName = #{roleName,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
@@ -92,26 +92,26 @@
       <if test="creater != null" >
         creater = #{creater,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=VARCHAR},
+      <if test="create_time != null" >
+        create_time = #{create_time,jdbcType=VARCHAR},
       </if>
       <if test="modifyer != null" >
         modifyer = #{modifyer,jdbcType=VARCHAR},
       </if>
-      <if test="modifyTime != null" >
-        modify_time = #{modifyTime,jdbcType=VARCHAR},
+      <if test="modify_time != null" >
+        modify_time = #{modify_time,jdbcType=VARCHAR},
       </if>
     </set>
-    where roleCode = #{rolecode,jdbcType=INTEGER}
+    where roleCode = #{roleCode,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cqrcb.boot.domain.Role" >
     update h_role
-    set roleName = #{rolename,jdbcType=VARCHAR},
+    set roleName = #{roleName,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       creater = #{creater,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=VARCHAR},
       modifyer = #{modifyer,jdbcType=VARCHAR},
-      modify_time = #{modifyTime,jdbcType=VARCHAR}
-    where roleCode = #{rolecode,jdbcType=INTEGER}
+      modify_time = #{modify_time,jdbcType=VARCHAR}
+    where roleCode = #{roleCode,jdbcType=INTEGER}
   </update>
 </mapper>

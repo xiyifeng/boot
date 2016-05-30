@@ -15,12 +15,12 @@ public class Role extends PageBase {
     /**
      * 角色代码
      */
-    private Integer rolecode;
+    private Integer roleCode;
 
     /**
      * 角色名称
      */
-    private String rolename;
+    private String roleName;
 
     /**
      * 角色说明
@@ -35,7 +35,7 @@ public class Role extends PageBase {
     /**
      * 创建时间
      */
-    private String createTime;
+    private String create_time;
 
     /**
      * 修改�?
@@ -45,22 +45,22 @@ public class Role extends PageBase {
     /**
      * 修改时间
      */
-    private String modifyTime;
+    private String modify_time;
 
-    public Integer getRolecode() {
-        return rolecode;
+    public Integer getRoleCode() {
+        return roleCode;
     }
 
-    public void setRolecode(Integer rolecode) {
-        this.rolecode = rolecode;
+    public void setRoleCode(Integer roleCode) {
+        this.roleCode = roleCode;
     }
 
-    public String getRolename() {
-        return rolename;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRolename(String rolename) {
-        this.rolename = rolename == null ? null : rolename.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 
     public String getRemark() {
@@ -79,12 +79,12 @@ public class Role extends PageBase {
         this.creater = creater == null ? null : creater.trim();
     }
 
-    public String getCreateTime() {
-        return createTime;
+    public String getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime == null ? null : createTime.trim();
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time == null ? null : create_time.trim();
     }
 
     public String getModifyer() {
@@ -95,11 +95,11 @@ public class Role extends PageBase {
         this.modifyer = modifyer == null ? null : modifyer.trim();
     }
 
-    public String getModifyTime() {
-        return modifyTime;
+    public String getModify_time() {
+        return modify_time;
     }
 
-    public void setModifyTime(String modifyTime) {
-        this.modifyTime = modifyTime == null ? null : modifyTime.trim();
+    public void setModify_time(String modify_time) {
+        this.modify_time = modify_time == null ? null : modify_time.trim();
     }
 }

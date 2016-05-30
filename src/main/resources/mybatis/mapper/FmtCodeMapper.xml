@@ -13,16 +13,6 @@
 		limit #{startRow},#{rows}
 	</select>
 
-	<select id="selectAll" resultType="com.cqrcb.boot.domain.FmtCode">
-		select * from H_FMT_CODE
-	</select>
-
-	<select id="selectByPrimaryKey" resultType="com.cqrcb.boot.domain.FmtCode"
-		parameterType="string">
-		select * from
-		H_FMT_CODE where uuid = #{uuid}
-	</select>
-
 	<select id="selectTotalSize" resultType="int">
 		select count(1) from H_FMT_CODE
 		<if test="diffCode != null and diffCode != ''">

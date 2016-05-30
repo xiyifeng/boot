@@ -73,6 +73,7 @@
 	     --> 
 	    <javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}" >
 	    	<property name="trimStrings" value="true"/>
+	    	<property name="enableSubPackages" value="true" />
             <property name="rootClass" value="com.cqrcb.boot.domain.page.PageBase"/>
 	    </javaModelGenerator> 
 	    <!-- 生成用于查询的Example对象 --> 
@@ -130,37 +131,43 @@
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
-            enableUpdateByExample="false"> 
+            enableUpdateByExample="false" >
+            <property name="useActualColumnNames" value="true" />
 	    </table> 
 	    <table tableName="h_user" domainObjectName="User" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
+            <property name="useActualColumnNames" value="true" />
 	    </table>
 	    <table tableName="h_right" domainObjectName="Right" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
+            <property name="useActualColumnNames" value="true" />
 	    </table>
 	    <table tableName="h_role" domainObjectName="Role" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
+            <property name="useActualColumnNames" value="true" />
 	    </table>
 	    <table tableName="h_role_right" domainObjectName="RoleRight" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
-            enableUpdateByExample="false"> 
+            enableUpdateByExample="false">
+            <property name="useActualColumnNames" value="true" />
 	    </table>
 	    <table tableName="h_user_role" domainObjectName="UserRole" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
+            <property name="useActualColumnNames" value="true" />
 	    </table>
   </context> 
 </generatorConfiguration>

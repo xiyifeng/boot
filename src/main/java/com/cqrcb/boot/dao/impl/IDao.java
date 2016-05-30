@@ -19,46 +19,31 @@ public class IDao<T> implements Dao<T> {
 
 	@Override
 	public void save(T t) {
-		logger.debug("dao save invoke  【" + t.getClass().getName()
-				+ ".insert 】");
-		sqlSessionTemplate.insert(t.getClass().getName() + ".insert", t);
+		logger.debug("dao save invoke  【mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.insert 】");
+		sqlSessionTemplate.insert("mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.insert", t);
 	}
 
 	@Override
 	public void delete(T t) {
-		logger.debug("dao delete invoke  【" + t.getClass().getName()
-				+ ".deleteByPrimaryKey 】");
-		sqlSessionTemplate.delete(t.getClass().getName()
-				+ ".deleteByPrimaryKey", t);
-	}
-
-	@Override
-	public List<T> selectList(T t) {
-		logger.debug("dao selectList invoke  【" + t.getClass().getName()
-				+ ".selectList 】");
-		return sqlSessionTemplate.selectList(t.getClass().getName()
-				+ ".selectList", t);
+		logger.debug("dao delete invoke  【mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.deleteByPrimaryKey 】");
+		sqlSessionTemplate
+				.delete("mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.deleteByPrimaryKey", t);
 	}
 
 	@Override
 	public int selectTotalSize(T t) {
 		logger.debug("dao selectTotalSize invoke  【" + t.getClass().getName()
 				+ ".selectTotalSize】");
-		logger.debug("=====" + sqlSessionTemplate);
-		logger.debug("=====" + t.getClass().getName() + ".selectTotalSize");
-		logger.debug("=====" + t);
 		Object sn = sqlSessionTemplate.selectOne(t.getClass().getName()
 				+ ".selectTotalSize", t);
-		logger.debug("========" + sn);
 		return Integer.valueOf(sn.toString()).intValue();
 	}
 
 	@Override
 	public void modify(T t) {
-		logger.debug("dao modify invoke  【" + t.getClass().getName()
-				+ ".modifyByPrimaryKey】");
-		sqlSessionTemplate.selectOne(t.getClass().getName()
-				+ ".modifyByPrimaryKey", t);
+		logger.debug("dao modify invoke  【mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.modifyByPrimaryKey】");
+		sqlSessionTemplate
+				.update("mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.updateByPrimaryKey", t);
 	}
 
 	@Override
@@ -75,10 +60,9 @@ public class IDao<T> implements Dao<T> {
 
 	@Override
 	public Object selectOne(T t) {
-		logger.debug("dao selectOne invoke  【" + t.getClass().getName()
-				+ ".selectByPrimaryKey】");
-		return sqlSessionTemplate.selectOne(t.getClass().getName()
-				+ ".selectByPrimaryKey", t);
+		logger.debug("dao selectOne invoke  【mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.selectByPrimaryKey】");
+		return sqlSessionTemplate.selectOne(
+				"mybatis.defaultMapper."+t.getClass().getSimpleName()+"Mapper.selectByPrimaryKey", t);
 	}
 
 	@Override
@@ -94,11 +78,9 @@ public class IDao<T> implements Dao<T> {
 	}
 
 	@Override
-	public List<T> selectEverPage(T t) {
-		logger.debug("dao selectList invoke  【" + t.getClass().getName()
-				+ ".selectEverPage" + "】");
-		return sqlSessionTemplate.selectList(t.getClass().getName()
-				+ ".selectEverPage", t);
+	public List<T> selectEverPage(String statement, T t) {
+		logger.debug("dao selectList invoke  【 " + statement + "】");
+		return sqlSessionTemplate.selectList(statement, t);
 	}
 
 	@Override

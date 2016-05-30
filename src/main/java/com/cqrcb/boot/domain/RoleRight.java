@@ -15,26 +15,26 @@ public class RoleRight extends PageBase {
     /**
      * 角色代码
      */
-    private Integer roleCode;
+    private Integer role_code;
 
     /**
      * 权限ID
      */
-    private Integer rightId;
+    private Integer right_id;
 
-    public Integer getRoleCode() {
-        return roleCode;
+    public Integer getRole_code() {
+        return role_code;
     }
 
-    public void setRoleCode(Integer roleCode) {
-        this.roleCode = roleCode;
+    public void setRole_code(Integer role_code) {
+        this.role_code = role_code;
     }
 
-    public Integer getRightId() {
-        return rightId;
+    public Integer getRight_id() {
+        return right_id;
     }
 
-    public void setRightId(Integer rightId) {
-        this.rightId = rightId;
+    public void setRight_id(Integer right_id) {
+        this.right_id = right_id;
     }
 }

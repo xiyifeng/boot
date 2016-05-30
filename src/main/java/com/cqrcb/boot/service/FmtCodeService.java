@@ -22,8 +22,6 @@ import com.cqrcb.boot.domain.FmtCode;
  */
 public interface FmtCodeService {
 
-	List<FmtCode> findAll();
-
 	FmtCode save(FmtCode message);
 
 	FmtCode findFmtCode(String uuid);
@@ -31,8 +29,6 @@ public interface FmtCodeService {
 	void deleteFmtCode(String uuid);
 
 	void passFmtCode(String uuid);
-
-	List<FmtCode> selectList(FmtCode fmtCode);
 
 	List<FmtCode> selectEverPage(FmtCode fmtCode);
 	

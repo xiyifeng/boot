@@ -20,22 +20,22 @@ public class FmtCode extends PageBase {
     /**
      * 交易
      */
-    private String trancode;
+    private String tranCode;
 
     /**
      * 顺序号码
      */
-    private Integer msgseq;
+    private Integer msgSeq;
 
     /**
      * 请求时间
      */
-    private String requesttime;
+    private String requestTime;
 
     /**
      * 响应时间
      */
-    private String responsetime;
+    private String responseTime;
 
     /**
      * 状�?
@@ -45,7 +45,7 @@ public class FmtCode extends PageBase {
     /**
      * 是否存在差异
      */
-    private String diffcode;
+    private String diffCode;
 
     public String getUuid() {
         return uuid;
@@ -55,36 +55,36 @@ public class FmtCode extends PageBase {
         this.uuid = uuid == null ? null : uuid.trim();
     }
 
-    public String getTrancode() {
-        return trancode;
+    public String getTranCode() {
+        return tranCode;
     }
 
-    public void setTrancode(String trancode) {
-        this.trancode = trancode == null ? null : trancode.trim();
+    public void setTranCode(String tranCode) {
+        this.tranCode = tranCode == null ? null : tranCode.trim();
     }
 
-    public Integer getMsgseq() {
-        return msgseq;
+    public Integer getMsgSeq() {
+        return msgSeq;
     }
 
-    public void setMsgseq(Integer msgseq) {
-        this.msgseq = msgseq;
+    public void setMsgSeq(Integer msgSeq) {
+        this.msgSeq = msgSeq;
     }
 
-    public String getRequesttime() {
-        return requesttime;
+    public String getRequestTime() {
+        return requestTime;
     }
 
-    public void setRequesttime(String requesttime) {
-        this.requesttime = requesttime == null ? null : requesttime.trim();
+    public void setRequestTime(String requestTime) {
+        this.requestTime = requestTime == null ? null : requestTime.trim();
     }
 
-    public String getResponsetime() {
-        return responsetime;
+    public String getResponseTime() {
+        return responseTime;
     }
 
-    public void setResponsetime(String responsetime) {
-        this.responsetime = responsetime == null ? null : responsetime.trim();
+    public void setResponseTime(String responseTime) {
+        this.responseTime = responseTime == null ? null : responseTime.trim();
     }
 
     public String getStatus() {
@@ -95,11 +95,11 @@ public class FmtCode extends PageBase {
         this.status = status == null ? null : status.trim();
     }
 
-    public String getDiffcode() {
-        return diffcode;
+    public String getDiffCode() {
+        return diffCode;
     }
 
-    public void setDiffcode(String diffcode) {
-        this.diffcode = diffcode == null ? null : diffcode.trim();
+    public void setDiffCode(String diffCode) {
+        this.diffCode = diffCode == null ? null : diffCode.trim();
     }
 }

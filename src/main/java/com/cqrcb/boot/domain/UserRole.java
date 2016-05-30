@@ -15,26 +15,26 @@ public class UserRole extends PageBase {
     /**
      * 用户代码
      */
-    private String userCode;
+    private String user_code;
 
     /**
      * 角色代码
      */
-    private String roleCode;
+    private String role_code;
 
-    public String getUserCode() {
-        return userCode;
+    public String getUser_code() {
+        return user_code;
     }
 
-    public void setUserCode(String userCode) {
-        this.userCode = userCode == null ? null : userCode.trim();
+    public void setUser_code(String user_code) {
+        this.user_code = user_code == null ? null : user_code.trim();
     }
 
-    public String getRoleCode() {
-        return roleCode;
+    public String getRole_code() {
+        return role_code;
     }
 
-    public void setRoleCode(String roleCode) {
-        this.roleCode = roleCode == null ? null : roleCode.trim();
+    public void setRole_code(String role_code) {
+        this.role_code = role_code == null ? null : role_code.trim();
     }
 }

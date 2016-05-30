@@ -17,13 +17,11 @@ public interface Dao<T> {
 
 	public void modify(T t);
 
-	public List<T> selectList(T t);
-
 	public List<T> selectList(String statement);
 
 	public List<T> selectList(String statement, T t);
 
-	public List<T> selectEverPage(T t);
+	public List<T> selectEverPage(String statement,T t);
 
 	public int selectTotalSize(T t);
 

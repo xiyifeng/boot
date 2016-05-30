@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cqrcb.boot.domain.FmtCode;
+import com.cqrcb.boot.domain.info.FmtDetail;
 import com.cqrcb.boot.domain.page.JsonResult;
 import com.cqrcb.boot.service.FmtCodeService;
 import com.cqrcb.boot.util.JsonUtil;
@@ -46,22 +47,21 @@ public class ReplayController {
 			ModelMap modelMap) {
 		logger.debug("传入参数: " + uuid);
 		FmtCode fmtCode = fmtCodeService.findFmtCode(uuid);
-
-		// fmtCode.setResponseMsg(crtData());
-		// fmtCode.setNewResponseMsg(fmtCode.getResponseMsg());
-		// fmtCode.setCompResult(fmtCode.getResponseMsg());
-		
-		modelMap.addAttribute("fmtCode", fmtCode);
+		FmtDetail fmtDetail = new FmtDetail();
+		fmtDetail.setUuid(fmtCode.getUuid());
+		fmtDetail.setResponseMsg(crtData());
+		fmtDetail.setNewResponseMsg(fmtDetail.getResponseMsg());
+		fmtDetail.setCompResult(fmtDetail.getResponseMsg());
+		modelMap.addAttribute("fmtCode", fmtDetail);
 		return "replay/detail";
 	}
-	
-	private String crtData()
-	{
+
+	private String crtData() {
 		StringBuffer sb = new StringBuffer();
-		for(int i = 0 ;i < 100; i ++ )
-		{
-			sb.append("<root>123</root>");
+		for (int i = 0; i < 100; i++) {
+			sb.append("<root>abcdefg</root>");
 		}
 		return sb.toString();
 	}
+
 }

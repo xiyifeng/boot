@@ -15,19 +15,15 @@ public class FmtCodeServiceImpl implements FmtCodeService {
 	private Dao<FmtCode> dao;
 
 	@Override
-	public List<FmtCode> findAll() {
-		return dao.selectList("selectFmtCodeById");
-	}
-
-	@Override
 	public FmtCode save(FmtCode message) {
 		return null;
 	}
 
 	@Override
 	public FmtCode findFmtCode(String uuid) {
-		return (FmtCode) dao.selectOneByConds(FmtCode.class.getName()
-				+ ".selectByPrimaryKey", uuid);
+		FmtCode fc = new FmtCode();
+		fc.setUuid(uuid);
+		return (FmtCode) dao.selectOne(fc);
 	}
 
 	@Override
@@ -41,18 +37,14 @@ public class FmtCodeServiceImpl implements FmtCodeService {
 	}
 
 	@Override
-	public List<FmtCode> selectList(FmtCode fmtCode) {
-		return dao.selectList(fmtCode);
-	}
-
-	@Override
 	public int selectTotalSize(FmtCode fmtCode) {
 		return dao.selectTotalSize(fmtCode);
 	}
 
 	@Override
 	public List<FmtCode> selectEverPage(FmtCode fmtCode) {
-		return dao.selectEverPage(fmtCode);
+		return dao.selectEverPage(
+				"com.cqrcb.boot.domain.FmtCode.selectEverPage", fmtCode);
 	}
 
 }

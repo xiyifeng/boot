@@ -15,12 +15,12 @@ public class User extends PageBase {
     /**
      * 用户代码
      */
-    private String userCode;
+    private String user_code;
 
     /**
      * 用户名称
      */
-    private String userName;
+    private String user_name;
 
     /**
      * 密码
@@ -40,7 +40,7 @@ public class User extends PageBase {
     /**
      * 移动号码
      */
-    private String mobilPhone;
+    private String mobil_phone;
 
     /**
      * 状�?(1-正常 2-锁定 3-失效)
@@ -60,27 +60,27 @@ public class User extends PageBase {
     /**
      * 登陆错误连续失败次数
      */
-    private Integer errorLoginTimes;
+    private Integer error_login_times;
 
     /**
      * 备注
      */
     private String remark;
 
-    public String getUserCode() {
-        return userCode;
+    public String getUser_code() {
+        return user_code;
     }
 
-    public void setUserCode(String userCode) {
-        this.userCode = userCode == null ? null : userCode.trim();
+    public void setUser_code(String user_code) {
+        this.user_code = user_code == null ? null : user_code.trim();
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setUser_name(String user_name) {
+        this.user_name = user_name == null ? null : user_name.trim();
     }
 
     public String getPassword() {
@@ -107,12 +107,12 @@ public class User extends PageBase {
         this.email = email == null ? null : email.trim();
     }
 
-    public String getMobilPhone() {
-        return mobilPhone;
+    public String getMobil_phone() {
+        return mobil_phone;
     }
 
-    public void setMobilPhone(String mobilPhone) {
-        this.mobilPhone = mobilPhone == null ? null : mobilPhone.trim();
+    public void setMobil_phone(String mobil_phone) {
+        this.mobil_phone = mobil_phone == null ? null : mobil_phone.trim();
     }
 
     public String getStatus() {
@@ -139,12 +139,12 @@ public class User extends PageBase {
         this.theme = theme == null ? null : theme.trim();
     }
 
-    public Integer getErrorLoginTimes() {
-        return errorLoginTimes;
+    public Integer getError_login_times() {
+        return error_login_times;
     }
 
-    public void setErrorLoginTimes(Integer errorLoginTimes) {
-        this.errorLoginTimes = errorLoginTimes;
+    public void setError_login_times(Integer error_login_times) {
+        this.error_login_times = error_login_times;
     }
 
     public String getRemark() {
