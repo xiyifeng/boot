@@ -29,8 +29,9 @@
 			<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" /> 
 		-->
 	<!-- 用来生成注释 1. suppressAllComments 默认是false 此属性用于指定在生成的代码是否将包括任何注释。如果设置为true 
-		则不生成注释 2. suppressDate 默认是false 此属性用于指定在生成的注释是否将包括MBG代时间戳。  -->
-	<commentGenerator type="com.cqrcb.boot.generator.MyCommentGennerator">
+		则不生成注释 2. suppressDate 默认是false 此属性用于指定在生成的注释是否将包括MBG代时间戳。
+		 type="com.cqrcb.boot.generator.MyCommentGennerator"  -->
+	<commentGenerator>
 		<property name="javaFileEncoding" value="UTF-8"/>
 		<property name="suppressAllComments" value="true" />
 		<property name="suppressDate" value="false" />
@@ -139,14 +140,14 @@
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
-            <property name="useActualColumnNames" value="true" />
+            <property name="useActualColumnNames" value="false" />
 	    </table>
 	    <table tableName="h_right" domainObjectName="Right" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
-            <property name="useActualColumnNames" value="true" />
+            <property name="useActualColumnNames" value="false" />
 	    </table>
 	    <table tableName="h_role" domainObjectName="Role" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
@@ -160,14 +161,14 @@
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false">
-            <property name="useActualColumnNames" value="true" />
+            <property name="useActualColumnNames" value="false" />
 	    </table>
 	    <table tableName="h_user_role" domainObjectName="UserRole" enableInsert="true"  
             enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"  
             enableDeleteByPrimaryKey="true" enableSelectByExample="false"  
             enableDeleteByExample="false" enableCountByExample="false"  
             enableUpdateByExample="false"> 
-            <property name="useActualColumnNames" value="true" />
+            <property name="useActualColumnNames" value="false" />
 	    </table>
   </context> 
 </generatorConfiguration>

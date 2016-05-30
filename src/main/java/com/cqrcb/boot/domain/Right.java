@@ -1,117 +1,66 @@
-/**
-* 
-* Right.java
-* Copyright(c) 2015-2020 
-* All Rights reserved. 
-* -----------------------------------
-* 2016-05-30creadted 
-* @Auther xiyifeng
-*/
 package com.cqrcb.boot.domain;
 
 import com.cqrcb.boot.domain.page.PageBase;
 
 public class Right extends PageBase {
-    /**
-     * 角色代码
-     */
-    private Integer right_id;
+    private Integer rightId;
 
-    /**
-     * 角色名称
-     */
-    private String right_name;
+    private String rightName;
 
-    /**
-     * 上级目录代码(�?时，表示主目�?
-     */
-    private Integer super_right_id;
+    private Integer superRightId;
 
-    /**
-     * 父节点名�?
-     */
-    private String super_right_name;
+    private String superRightName;
 
-    /**
-     * 顺序�?
-     */
     private Integer sort;
 
-    /**
-     * 权限类型(1-目录 2-交易)
-     */
-    private String right_type;
+    private String rightType;
 
-    /**
-     * 目录显示图标
-     */
-    private String icon_cls;
+    private String iconCls;
 
-    /**
-     * URL连接
-     */
     private String url;
 
-    /**
-     * 状�?
-     */
     private String status;
 
-    /**
-     * 备注
-     */
     private String remark;
 
-    /**
-     * 创建�?
-     */
     private String creater;
 
-    /**
-     * 创建时间
-     */
-    private String create_time;
+    private String createTime;
 
-    /**
-     * 修改�?
-     */
     private String modifyer;
 
-    /**
-     * 修改时间
-     */
-    private String modify_time;
+    private String modifyTime;
 
-    public Integer getRight_id() {
-        return right_id;
+    public Integer getRightId() {
+        return rightId;
     }
 
-    public void setRight_id(Integer right_id) {
-        this.right_id = right_id;
+    public void setRightId(Integer rightId) {
+        this.rightId = rightId;
     }
 
-    public String getRight_name() {
-        return right_name;
+    public String getRightName() {
+        return rightName;
     }
 
-    public void setRight_name(String right_name) {
-        this.right_name = right_name == null ? null : right_name.trim();
+    public void setRightName(String rightName) {
+        this.rightName = rightName == null ? null : rightName.trim();
     }
 
-    public Integer getSuper_right_id() {
-        return super_right_id;
+    public Integer getSuperRightId() {
+        return superRightId;
     }
 
-    public void setSuper_right_id(Integer super_right_id) {
-        this.super_right_id = super_right_id;
+    public void setSuperRightId(Integer superRightId) {
+        this.superRightId = superRightId;
     }
 
-    public String getSuper_right_name() {
-        return super_right_name;
+    public String getSuperRightName() {
+        return superRightName;
     }
 
-    public void setSuper_right_name(String super_right_name) {
-        this.super_right_name = super_right_name == null ? null : super_right_name.trim();
+    public void setSuperRightName(String superRightName) {
+        this.superRightName = superRightName == null ? null : superRightName.trim();
     }
 
     public Integer getSort() {
@@ -122,20 +71,20 @@ public class Right extends PageBase {
         this.sort = sort;
     }
 
-    public String getRight_type() {
-        return right_type;
+    public String getRightType() {
+        return rightType;
     }
 
-    public void setRight_type(String right_type) {
-        this.right_type = right_type == null ? null : right_type.trim();
+    public void setRightType(String rightType) {
+        this.rightType = rightType == null ? null : rightType.trim();
     }
 
-    public String getIcon_cls() {
-        return icon_cls;
+    public String getIconCls() {
+        return iconCls;
     }
 
-    public void setIcon_cls(String icon_cls) {
-        this.icon_cls = icon_cls == null ? null : icon_cls.trim();
+    public void setIconCls(String iconCls) {
+        this.iconCls = iconCls == null ? null : iconCls.trim();
     }
 
     public String getUrl() {
@@ -170,12 +119,12 @@ public class Right extends PageBase {
         this.creater = creater == null ? null : creater.trim();
     }
 
-    public String getCreate_time() {
-        return create_time;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(String create_time) {
-        this.create_time = create_time == null ? null : create_time.trim();
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime == null ? null : createTime.trim();
     }
 
     public String getModifyer() {
@@ -186,11 +135,11 @@ public class Right extends PageBase {
         this.modifyer = modifyer == null ? null : modifyer.trim();
     }
 
-    public String getModify_time() {
-        return modify_time;
+    public String getModifyTime() {
+        return modifyTime;
     }
 
-    public void setModify_time(String modify_time) {
-        this.modify_time = modify_time == null ? null : modify_time.trim();
+    public void setModifyTime(String modifyTime) {
+        this.modifyTime = modifyTime == null ? null : modifyTime.trim();
     }
 }

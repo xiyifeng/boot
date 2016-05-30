@@ -1,51 +1,21 @@
-/**
-* 
-* Role.java
-* Copyright(c) 2015-2020 
-* All Rights reserved. 
-* -----------------------------------
-* 2016-05-30creadted 
-* @Auther xiyifeng
-*/
 package com.cqrcb.boot.domain;
 
 import com.cqrcb.boot.domain.page.PageBase;
 
 public class Role extends PageBase {
-    /**
-     * 角色代码
-     */
     private Integer roleCode;
 
-    /**
-     * 角色名称
-     */
     private String roleName;
 
-    /**
-     * 角色说明
-     */
     private String remark;
 
-    /**
-     * 创建�?
-     */
     private String creater;
 
-    /**
-     * 创建时间
-     */
-    private String create_time;
+    private String createTime;
 
-    /**
-     * 修改�?
-     */
     private String modifyer;
 
-    /**
-     * 修改时间
-     */
-    private String modify_time;
+    private String modifyTime;
 
     public Integer getRoleCode() {
         return roleCode;
@@ -79,14 +49,6 @@ public class Role extends PageBase {
         this.creater = creater == null ? null : creater.trim();
     }
 
-    public String getCreate_time() {
-        return create_time;
-    }
-
-    public void setCreate_time(String create_time) {
-        this.create_time = create_time == null ? null : create_time.trim();
-    }
-
     public String getModifyer() {
         return modifyer;
     }
@@ -95,11 +57,20 @@ public class Role extends PageBase {
         this.modifyer = modifyer == null ? null : modifyer.trim();
     }
 
-    public String getModify_time() {
-        return modify_time;
-    }
+	public String getCreateTime() {
+		return createTime;
+	}
 
-    public void setModify_time(String modify_time) {
-        this.modify_time = modify_time == null ? null : modify_time.trim();
-    }
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getModifyTime() {
+		return modifyTime;
+	}
+
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
 }

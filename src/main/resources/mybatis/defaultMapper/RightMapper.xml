@@ -2,20 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mybatis.defaultMapper.RightMapper" >
   <resultMap id="BaseResultMap" type="com.cqrcb.boot.domain.Right" >
-    <id column="right_id" property="right_id" jdbcType="INTEGER" />
-    <result column="right_name" property="right_name" jdbcType="VARCHAR" />
-    <result column="super_right_id" property="super_right_id" jdbcType="INTEGER" />
-    <result column="super_right_name" property="super_right_name" jdbcType="VARCHAR" />
+    <id column="right_id" property="rightId" jdbcType="INTEGER" />
+    <result column="right_name" property="rightName" jdbcType="VARCHAR" />
+    <result column="super_right_id" property="superRightId" jdbcType="INTEGER" />
+    <result column="super_right_name" property="superRightName" jdbcType="VARCHAR" />
     <result column="sort" property="sort" jdbcType="INTEGER" />
-    <result column="right_type" property="right_type" jdbcType="VARCHAR" />
-    <result column="icon_cls" property="icon_cls" jdbcType="VARCHAR" />
+    <result column="right_type" property="rightType" jdbcType="VARCHAR" />
+    <result column="icon_cls" property="iconCls" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="creater" property="creater" jdbcType="VARCHAR" />
-    <result column="create_time" property="create_time" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
     <result column="modifyer" property="modifyer" jdbcType="VARCHAR" />
-    <result column="modify_time" property="modify_time" jdbcType="VARCHAR" />
+    <result column="modify_time" property="modifyTime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     right_id, right_name, super_right_id, super_right_name, sort, right_type, icon_cls, 
@@ -25,11 +25,11 @@
     select 
     <include refid="Base_Column_List" />
     from h_right
-    where right_id = #{right_id,jdbcType=INTEGER}
+    where right_id = #{rightId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from h_right
-    where right_id = #{right_id,jdbcType=INTEGER}
+    where right_id = #{rightId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.cqrcb.boot.domain.Right" >
     insert into h_right (right_id, right_name, super_right_id, 
@@ -37,34 +37,34 @@
       icon_cls, url, status, 
       remark, creater, create_time, 
       modifyer, modify_time)
-    values (#{right_id,jdbcType=INTEGER}, #{right_name,jdbcType=VARCHAR}, #{super_right_id,jdbcType=INTEGER}, 
-      #{super_right_name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{right_type,jdbcType=VARCHAR}, 
-      #{icon_cls,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{creater,jdbcType=VARCHAR}, #{create_time,jdbcType=VARCHAR}, 
-      #{modifyer,jdbcType=VARCHAR}, #{modify_time,jdbcType=VARCHAR})
+    values (#{rightId,jdbcType=INTEGER}, #{rightName,jdbcType=VARCHAR}, #{superRightId,jdbcType=INTEGER}, 
+      #{superRightName,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{rightType,jdbcType=VARCHAR}, 
+      #{iconCls,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, 
+      #{modifyer,jdbcType=VARCHAR}, #{modifyTime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cqrcb.boot.domain.Right" >
     insert into h_right
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="right_id != null" >
+      <if test="rightId != null" >
         right_id,
       </if>
-      <if test="right_name != null" >
+      <if test="rightName != null" >
         right_name,
       </if>
-      <if test="super_right_id != null" >
+      <if test="superRightId != null" >
         super_right_id,
       </if>
-      <if test="super_right_name != null" >
+      <if test="superRightName != null" >
         super_right_name,
       </if>
       <if test="sort != null" >
         sort,
       </if>
-      <if test="right_type != null" >
+      <if test="rightType != null" >
         right_type,
       </if>
-      <if test="icon_cls != null" >
+      <if test="iconCls != null" >
         icon_cls,
       </if>
       <if test="url != null" >
@@ -79,37 +79,37 @@
       <if test="creater != null" >
         creater,
       </if>
-      <if test="create_time != null" >
+      <if test="createTime != null" >
         create_time,
       </if>
       <if test="modifyer != null" >
         modifyer,
       </if>
-      <if test="modify_time != null" >
+      <if test="modifyTime != null" >
         modify_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="right_id != null" >
-        #{right_id,jdbcType=INTEGER},
+      <if test="rightId != null" >
+        #{rightId,jdbcType=INTEGER},
       </if>
-      <if test="right_name != null" >
-        #{right_name,jdbcType=VARCHAR},
+      <if test="rightName != null" >
+        #{rightName,jdbcType=VARCHAR},
       </if>
-      <if test="super_right_id != null" >
-        #{super_right_id,jdbcType=INTEGER},
+      <if test="superRightId != null" >
+        #{superRightId,jdbcType=INTEGER},
       </if>
-      <if test="super_right_name != null" >
-        #{super_right_name,jdbcType=VARCHAR},
+      <if test="superRightName != null" >
+        #{superRightName,jdbcType=VARCHAR},
       </if>
       <if test="sort != null" >
         #{sort,jdbcType=INTEGER},
       </if>
-      <if test="right_type != null" >
-        #{right_type,jdbcType=VARCHAR},
+      <if test="rightType != null" >
+        #{rightType,jdbcType=VARCHAR},
       </if>
-      <if test="icon_cls != null" >
-        #{icon_cls,jdbcType=VARCHAR},
+      <if test="iconCls != null" >
+        #{iconCls,jdbcType=VARCHAR},
       </if>
       <if test="url != null" >
         #{url,jdbcType=VARCHAR},
@@ -123,37 +123,37 @@
       <if test="creater != null" >
         #{creater,jdbcType=VARCHAR},
       </if>
-      <if test="create_time != null" >
-        #{create_time,jdbcType=VARCHAR},
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
       </if>
       <if test="modifyer != null" >
         #{modifyer,jdbcType=VARCHAR},
       </if>
-      <if test="modify_time != null" >
-        #{modify_time,jdbcType=VARCHAR},
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.cqrcb.boot.domain.Right" >
     update h_right
     <set >
-      <if test="right_name != null" >
-        right_name = #{right_name,jdbcType=VARCHAR},
+      <if test="rightName != null" >
+        right_name = #{rightName,jdbcType=VARCHAR},
       </if>
-      <if test="super_right_id != null" >
-        super_right_id = #{super_right_id,jdbcType=INTEGER},
+      <if test="superRightId != null" >
+        super_right_id = #{superRightId,jdbcType=INTEGER},
       </if>
-      <if test="super_right_name != null" >
-        super_right_name = #{super_right_name,jdbcType=VARCHAR},
+      <if test="superRightName != null" >
+        super_right_name = #{superRightName,jdbcType=VARCHAR},
       </if>
       <if test="sort != null" >
         sort = #{sort,jdbcType=INTEGER},
       </if>
-      <if test="right_type != null" >
-        right_type = #{right_type,jdbcType=VARCHAR},
+      <if test="rightType != null" >
+        right_type = #{rightType,jdbcType=VARCHAR},
       </if>
-      <if test="icon_cls != null" >
-        icon_cls = #{icon_cls,jdbcType=VARCHAR},
+      <if test="iconCls != null" >
+        icon_cls = #{iconCls,jdbcType=VARCHAR},
       </if>
       <if test="url != null" >
         url = #{url,jdbcType=VARCHAR},
@@ -167,33 +167,33 @@
       <if test="creater != null" >
         creater = #{creater,jdbcType=VARCHAR},
       </if>
-      <if test="create_time != null" >
-        create_time = #{create_time,jdbcType=VARCHAR},
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=VARCHAR},
       </if>
       <if test="modifyer != null" >
         modifyer = #{modifyer,jdbcType=VARCHAR},
       </if>
-      <if test="modify_time != null" >
-        modify_time = #{modify_time,jdbcType=VARCHAR},
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=VARCHAR},
       </if>
     </set>
-    where right_id = #{right_id,jdbcType=INTEGER}
+    where right_id = #{rightId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cqrcb.boot.domain.Right" >
     update h_right
-    set right_name = #{right_name,jdbcType=VARCHAR},
-      super_right_id = #{super_right_id,jdbcType=INTEGER},
-      super_right_name = #{super_right_name,jdbcType=VARCHAR},
+    set right_name = #{rightName,jdbcType=VARCHAR},
+      super_right_id = #{superRightId,jdbcType=INTEGER},
+      super_right_name = #{superRightName,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER},
-      right_type = #{right_type,jdbcType=VARCHAR},
-      icon_cls = #{icon_cls,jdbcType=VARCHAR},
+      right_type = #{rightType,jdbcType=VARCHAR},
+      icon_cls = #{iconCls,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       creater = #{creater,jdbcType=VARCHAR},
-      create_time = #{create_time,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR},
       modifyer = #{modifyer,jdbcType=VARCHAR},
-      modify_time = #{modify_time,jdbcType=VARCHAR}
-    where right_id = #{right_id,jdbcType=INTEGER}
+      modify_time = #{modifyTime,jdbcType=VARCHAR}
+    where right_id = #{rightId,jdbcType=INTEGER}
   </update>
 </mapper>

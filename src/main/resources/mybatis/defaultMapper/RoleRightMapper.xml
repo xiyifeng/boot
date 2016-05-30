@@ -2,29 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mybatis.defaultMapper.RoleRightMapper" >
   <resultMap id="BaseResultMap" type="com.cqrcb.boot.domain.RoleRight" >
-    <result column="role_code" property="role_code" jdbcType="INTEGER" />
-    <result column="right_id" property="right_id" jdbcType="INTEGER" />
+    <result column="role_code" property="roleCode" jdbcType="INTEGER" />
+    <result column="right_id" property="rightId" jdbcType="INTEGER" />
   </resultMap>
   <insert id="insert" parameterType="com.cqrcb.boot.domain.RoleRight" >
     insert into h_role_right (role_code, right_id)
-    values (#{role_code,jdbcType=INTEGER}, #{right_id,jdbcType=INTEGER})
+    values (#{roleCode,jdbcType=INTEGER}, #{rightId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.cqrcb.boot.domain.RoleRight" >
     insert into h_role_right
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="role_code != null" >
+      <if test="roleCode != null" >
         role_code,
       </if>
-      <if test="right_id != null" >
+      <if test="rightId != null" >
         right_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="role_code != null" >
-        #{role_code,jdbcType=INTEGER},
+      <if test="roleCode != null" >
+        #{roleCode,jdbcType=INTEGER},
       </if>
-      <if test="right_id != null" >
-        #{right_id,jdbcType=INTEGER},
+      <if test="rightId != null" >
+        #{rightId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>

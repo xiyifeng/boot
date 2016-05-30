@@ -1,4 +1,4 @@
-package com.cqrcb.boot.service;
+package com.cqrcb.boot.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.cqrcb.boot.dao.intc.Dao;
 import com.cqrcb.boot.domain.FmtCode;
+import com.cqrcb.boot.service.FmtCodeService;
 
 @Service("fmtCodeService")
 public class FmtCodeServiceImpl implements FmtCodeService {

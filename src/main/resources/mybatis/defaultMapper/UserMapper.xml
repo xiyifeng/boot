@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mybatis.defaultMapper.UserMapper" >
   <resultMap id="BaseResultMap" type="com.cqrcb.boot.domain.User" >
-    <id column="user_code" property="user_code" jdbcType="VARCHAR" />
-    <result column="user_name" property="user_name" jdbcType="VARCHAR" />
+    <id column="user_code" property="userCode" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="position" property="position" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="mobil_phone" property="mobil_phone" jdbcType="VARCHAR" />
+    <result column="mobil_phone" property="mobilPhone" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="lang" property="lang" jdbcType="VARCHAR" />
     <result column="theme" property="theme" jdbcType="VARCHAR" />
-    <result column="error_login_times" property="error_login_times" jdbcType="INTEGER" />
+    <result column="error_login_times" property="errorLoginTimes" jdbcType="INTEGER" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -22,29 +22,29 @@
     select 
     <include refid="Base_Column_List" />
     from h_user
-    where user_code = #{user_code,jdbcType=VARCHAR}
+    where user_code = #{userCode,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from h_user
-    where user_code = #{user_code,jdbcType=VARCHAR}
+    where user_code = #{userCode,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.cqrcb.boot.domain.User" >
     insert into h_user (user_code, user_name, password, 
       position, email, mobil_phone, 
       status, lang, theme, 
       error_login_times, remark)
-    values (#{user_code,jdbcType=VARCHAR}, #{user_name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{position,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{mobil_phone,jdbcType=VARCHAR}, 
+    values (#{userCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{position,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{mobilPhone,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR}, #{lang,jdbcType=VARCHAR}, #{theme,jdbcType=VARCHAR}, 
-      #{error_login_times,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+      #{errorLoginTimes,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.cqrcb.boot.domain.User" >
     insert into h_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="user_code != null" >
+      <if test="userCode != null" >
         user_code,
       </if>
-      <if test="user_name != null" >
+      <if test="userName != null" >
         user_name,
       </if>
       <if test="password != null" >
@@ -56,7 +56,7 @@
       <if test="email != null" >
         email,
       </if>
-      <if test="mobil_phone != null" >
+      <if test="mobilPhone != null" >
         mobil_phone,
       </if>
       <if test="status != null" >
@@ -68,7 +68,7 @@
       <if test="theme != null" >
         theme,
       </if>
-      <if test="error_login_times != null" >
+      <if test="errorLoginTimes != null" >
         error_login_times,
       </if>
       <if test="remark != null" >
@@ -76,11 +76,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="user_code != null" >
-        #{user_code,jdbcType=VARCHAR},
+      <if test="userCode != null" >
+        #{userCode,jdbcType=VARCHAR},
       </if>
-      <if test="user_name != null" >
-        #{user_name,jdbcType=VARCHAR},
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
@@ -91,8 +91,8 @@
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="mobil_phone != null" >
-        #{mobil_phone,jdbcType=VARCHAR},
+      <if test="mobilPhone != null" >
+        #{mobilPhone,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         #{status,jdbcType=VARCHAR},
@@ -103,8 +103,8 @@
       <if test="theme != null" >
         #{theme,jdbcType=VARCHAR},
       </if>
-      <if test="error_login_times != null" >
-        #{error_login_times,jdbcType=INTEGER},
+      <if test="errorLoginTimes != null" >
+        #{errorLoginTimes,jdbcType=INTEGER},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -114,8 +114,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.cqrcb.boot.domain.User" >
     update h_user
     <set >
-      <if test="user_name != null" >
-        user_name = #{user_name,jdbcType=VARCHAR},
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
@@ -126,8 +126,8 @@
       <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="mobil_phone != null" >
-        mobil_phone = #{mobil_phone,jdbcType=VARCHAR},
+      <if test="mobilPhone != null" >
+        mobil_phone = #{mobilPhone,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         status = #{status,jdbcType=VARCHAR},
@@ -138,27 +138,27 @@
       <if test="theme != null" >
         theme = #{theme,jdbcType=VARCHAR},
       </if>
-      <if test="error_login_times != null" >
-        error_login_times = #{error_login_times,jdbcType=INTEGER},
+      <if test="errorLoginTimes != null" >
+        error_login_times = #{errorLoginTimes,jdbcType=INTEGER},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
-    where user_code = #{user_code,jdbcType=VARCHAR}
+    where user_code = #{userCode,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.cqrcb.boot.domain.User" >
     update h_user
-    set user_name = #{user_name,jdbcType=VARCHAR},
+    set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       position = #{position,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      mobil_phone = #{mobil_phone,jdbcType=VARCHAR},
+      mobil_phone = #{mobilPhone,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
       lang = #{lang,jdbcType=VARCHAR},
       theme = #{theme,jdbcType=VARCHAR},
-      error_login_times = #{error_login_times,jdbcType=INTEGER},
+      error_login_times = #{errorLoginTimes,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR}
-    where user_code = #{user_code,jdbcType=VARCHAR}
+    where user_code = #{userCode,jdbcType=VARCHAR}
   </update>
 </mapper>

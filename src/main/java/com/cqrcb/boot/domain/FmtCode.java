@@ -1,50 +1,20 @@
-/**
-* 
-* FmtCode.java
-* Copyright(c) 2015-2020 
-* All Rights reserved. 
-* -----------------------------------
-* 2016-05-30creadted 
-* @Auther xiyifeng
-*/
 package com.cqrcb.boot.domain;
 
 import com.cqrcb.boot.domain.page.PageBase;
 
 public class FmtCode extends PageBase {
-    /**
-     * UUID
-     */
     private String uuid;
 
-    /**
-     * 交易
-     */
     private String tranCode;
 
-    /**
-     * 顺序号码
-     */
     private Integer msgSeq;
 
-    /**
-     * 请求时间
-     */
     private String requestTime;
 
-    /**
-     * 响应时间
-     */
     private String responseTime;
 
-    /**
-     * 状�?
-     */
     private String status;
 
-    /**
-     * 是否存在差异
-     */
     private String diffCode;
 
     public String getUuid() {
