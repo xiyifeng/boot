@@ -1,0 +1,247 @@
+[ INFO ] [2016-05-30 17:35:45] com.xyf.boot.WebApplication [48] - Starting WebApplication on PC201501172208 with PID 6456 (D:\workspase\boot\target\classes started by Administrator in D:\workspase\boot)
+[ INFO ] [2016-05-30 17:35:45] com.xyf.boot.WebApplication [666] - No active profile set, falling back to default profiles: default
+[ INFO ] [2016-05-30 17:35:46] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [578] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7441d78e: startup date [Mon May 30 17:35:46 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:35:46] org.hibernate.validator.internal.util.Version [30] - HV000001: Hibernate Validator 5.2.4.Final
+[ INFO ] [2016-05-30 17:35:47] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/ApplicationContext.xml]
+[ INFO ] [2016-05-30 17:35:47] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/database/ApplicationContext-database.xml]
+[ INFO ] [2016-05-30 17:35:47] org.springframework.beans.factory.support.DefaultListableBeanFactory [839] - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfigure; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/xyf/boot/configure/FilterConfigure.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/HttpEncodingAutoConfiguration.class]]
+[ INFO ] [2016-05-30 17:35:48] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer [172] - Loading properties file from class path resource [conf/mybatis/dbconfig.properties]
+[ INFO ] [2016-05-30 17:35:48] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:35:48] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$350d660c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [81] - Tomcat initialized with port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:35:49] org.apache.catalina.core.StandardService [180] - Starting service Tomcat
+[ INFO ] [2016-05-30 17:35:49] org.apache.catalina.core.StandardEngine [180] - Starting Servlet Engine: Apache Tomcat/8.0.33
+[ INFO ] [2016-05-30 17:35:49] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [180] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2016-05-30 17:35:49] org.springframework.web.context.ContextLoader [272] - Root WebApplicationContext: initialization completed in 3133 ms
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'requestContextFilter' to: [/*]
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.FilterRegistrationBean [271] - Mapping filter: 'shiroFilter' to urls: [/*]
+[ INFO ] [2016-05-30 17:35:49] org.springframework.boot.context.embedded.ServletRegistrationBean [189] - Mapping servlet: 'dispatcherServlet' to [/]
+[ INFO ] [2016-05-30 17:35:49] com.xyf.boot.filter.ShiroFilter [22] - -------shiro Filter doFilter_  init
+[ WARN ] [2016-05-30 17:35:50] org.apache.ibatis.io.ResolverUtil [264] - Could not examine class 'com/xyf/boot/generator/MyCommentGennerator.class' due to a java.lang.NoClassDefFoundError with message: org/mybatis/generator/api/CommentGenerator
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [539] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7441d78e: startup date [Mon May 30 17:35:46 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/]}" onto public org.springframework.web.servlet.ModelAndView com.xyf.boot.controller.MainController.index()
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/list.json]}" onto public com.xyf.boot.domain.base.JsonResult com.xyf.boot.controller.ReplayController.listJson(com.xyf.boot.domain.FmtCode)
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.replayList()
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/detail/{uuid}]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.showDetail(java.lang.String,org.springframework.ui.ModelMap)
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:35:51] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:35:53] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [431] - Registering beans for JMX exposure on startup
+[ INFO ] [2016-05-30 17:35:53] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [912] - Bean with name 'dataSource' has been autodetected for JMX exposure
+[ INFO ] [2016-05-30 17:35:53] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [667] - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+[ INFO ] [2016-05-30 17:35:53] org.apache.coyote.http11.Http11NioProtocol [180] - Initializing ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:35:53] org.apache.coyote.http11.Http11NioProtocol [180] - Starting ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:35:53] org.apache.tomcat.util.net.NioSelectorPool [180] - Using a shared selector for servlet write/read
+[ INFO ] [2016-05-30 17:35:53] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [162] - Tomcat started on port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:35:53] com.xyf.boot.WebApplication [57] - Started WebApplication in 8.256 seconds (JVM running for 8.643)
+[ INFO ] [2016-05-30 17:37:16] com.xyf.boot.WebApplication [48] - Starting WebApplication on PC201501172208 with PID 6392 (D:\workspase\boot\target\classes started by Administrator in D:\workspase\boot)
+[ DEBUG] [2016-05-30 17:37:16] com.xyf.boot.WebApplication [51] - Running with Spring Boot v1.3.5.RELEASE, Spring v4.2.6.RELEASE
+[ INFO ] [2016-05-30 17:37:16] com.xyf.boot.WebApplication [666] - No active profile set, falling back to default profiles: default
+[ INFO ] [2016-05-30 17:37:17] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [578] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@13fc36d7: startup date [Mon May 30 17:37:17 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:37:17] org.hibernate.validator.internal.util.Version [30] - HV000001: Hibernate Validator 5.2.4.Final
+[ INFO ] [2016-05-30 17:37:18] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/ApplicationContext.xml]
+[ INFO ] [2016-05-30 17:37:18] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/database/ApplicationContext-database.xml]
+[ INFO ] [2016-05-30 17:37:18] org.springframework.beans.factory.support.DefaultListableBeanFactory [839] - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfigure; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/xyf/boot/configure/FilterConfigure.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/HttpEncodingAutoConfiguration.class]]
+[ INFO ] [2016-05-30 17:37:19] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer [172] - Loading properties file from class path resource [conf/mybatis/dbconfig.properties]
+[ INFO ] [2016-05-30 17:37:19] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:37:19] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$933e7c24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:37:20] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [81] - Tomcat initialized with port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:37:20] org.apache.catalina.core.StandardService [180] - Starting service Tomcat
+[ INFO ] [2016-05-30 17:37:20] org.apache.catalina.core.StandardEngine [180] - Starting Servlet Engine: Apache Tomcat/8.0.33
+[ INFO ] [2016-05-30 17:37:20] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [180] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2016-05-30 17:37:20] org.springframework.web.context.ContextLoader [272] - Root WebApplicationContext: initialization completed in 3356 ms
+[ DEBUG] [2016-05-30 17:37:20] com.xyf.boot.configure.FilterConfigure [26] - ______load filter shiroFilter!
+[ INFO ] [2016-05-30 17:37:21] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:21] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:21] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:21] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'requestContextFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:21] org.springframework.boot.context.embedded.FilterRegistrationBean [271] - Mapping filter: 'shiroFilter' to urls: [/*]
+[ INFO ] [2016-05-30 17:37:21] org.springframework.boot.context.embedded.ServletRegistrationBean [189] - Mapping servlet: 'dispatcherServlet' to [/]
+[ INFO ] [2016-05-30 17:37:21] com.xyf.boot.filter.ShiroFilter [22] - -------shiro Filter doFilter_  init
+[ WARN ] [2016-05-30 17:37:21] org.apache.ibatis.io.ResolverUtil [264] - Could not examine class 'com/xyf/boot/generator/MyCommentGennerator.class' due to a java.lang.NoClassDefFoundError with message: org/mybatis/generator/api/CommentGenerator
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [539] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@13fc36d7: startup date [Mon May 30 17:37:17 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/]}" onto public org.springframework.web.servlet.ModelAndView com.xyf.boot.controller.MainController.index()
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/list.json]}" onto public com.xyf.boot.domain.base.JsonResult com.xyf.boot.controller.ReplayController.listJson(com.xyf.boot.domain.FmtCode)
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.replayList()
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/detail/{uuid}]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.showDetail(java.lang.String,org.springframework.ui.ModelMap)
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:37:22] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:37:24] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [431] - Registering beans for JMX exposure on startup
+[ INFO ] [2016-05-30 17:37:24] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [912] - Bean with name 'dataSource' has been autodetected for JMX exposure
+[ INFO ] [2016-05-30 17:37:24] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [667] - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+[ INFO ] [2016-05-30 17:37:24] org.apache.coyote.http11.Http11NioProtocol [180] - Initializing ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:37:24] org.apache.coyote.http11.Http11NioProtocol [180] - Starting ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:37:24] org.apache.tomcat.util.net.NioSelectorPool [180] - Using a shared selector for servlet write/read
+[ INFO ] [2016-05-30 17:37:24] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [162] - Tomcat started on port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:37:24] com.xyf.boot.WebApplication [57] - Started WebApplication in 8.259 seconds (JVM running for 8.641)
+[ INFO ] [2016-05-30 17:37:38] com.xyf.boot.WebApplication [48] - Starting WebApplication on PC201501172208 with PID 1996 (D:\workspase\boot\target\classes started by Administrator in D:\workspase\boot)
+[ DEBUG] [2016-05-30 17:37:38] com.xyf.boot.WebApplication [51] - Running with Spring Boot v1.3.5.RELEASE, Spring v4.2.6.RELEASE
+[ INFO ] [2016-05-30 17:37:38] com.xyf.boot.WebApplication [666] - No active profile set, falling back to default profiles: default
+[ INFO ] [2016-05-30 17:37:39] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [578] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@605d3821: startup date [Mon May 30 17:37:39 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:37:39] org.hibernate.validator.internal.util.Version [30] - HV000001: Hibernate Validator 5.2.4.Final
+[ INFO ] [2016-05-30 17:37:40] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/ApplicationContext.xml]
+[ INFO ] [2016-05-30 17:37:40] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/database/ApplicationContext-database.xml]
+[ INFO ] [2016-05-30 17:37:40] org.springframework.beans.factory.support.DefaultListableBeanFactory [839] - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfigure; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/xyf/boot/configure/FilterConfigure.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/HttpEncodingAutoConfiguration.class]]
+[ INFO ] [2016-05-30 17:37:41] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer [172] - Loading properties file from class path resource [conf/mybatis/dbconfig.properties]
+[ INFO ] [2016-05-30 17:37:41] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:37:41] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1c363e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:37:42] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [81] - Tomcat initialized with port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:37:42] org.apache.catalina.core.StandardService [180] - Starting service Tomcat
+[ INFO ] [2016-05-30 17:37:42] org.apache.catalina.core.StandardEngine [180] - Starting Servlet Engine: Apache Tomcat/8.0.33
+[ INFO ] [2016-05-30 17:37:42] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [180] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2016-05-30 17:37:42] org.springframework.web.context.ContextLoader [272] - Root WebApplicationContext: initialization completed in 3203 ms
+[ DEBUG] [2016-05-30 17:37:42] com.xyf.boot.configure.FilterConfigure [26] - ______load filter shiroFilter!
+[ INFO ] [2016-05-30 17:37:43] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:43] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:43] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:43] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'requestContextFilter' to: [/*]
+[ INFO ] [2016-05-30 17:37:43] org.springframework.boot.context.embedded.FilterRegistrationBean [271] - Mapping filter: 'shiroFilter' to urls: [/*]
+[ INFO ] [2016-05-30 17:37:43] org.springframework.boot.context.embedded.ServletRegistrationBean [189] - Mapping servlet: 'dispatcherServlet' to [/]
+[ INFO ] [2016-05-30 17:37:43] com.xyf.boot.filter.ShiroFilter [22] - -------shiro Filter doFilter_  init
+[ WARN ] [2016-05-30 17:37:43] org.apache.ibatis.io.ResolverUtil [264] - Could not examine class 'com/xyf/boot/generator/MyCommentGennerator.class' due to a java.lang.NoClassDefFoundError with message: org/mybatis/generator/api/CommentGenerator
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [539] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@605d3821: startup date [Mon May 30 17:37:39 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/]}" onto public org.springframework.web.servlet.ModelAndView com.xyf.boot.controller.MainController.index()
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/list.json]}" onto public com.xyf.boot.domain.base.JsonResult com.xyf.boot.controller.ReplayController.listJson(com.xyf.boot.domain.FmtCode)
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.replayList()
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/detail/{uuid}]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.showDetail(java.lang.String,org.springframework.ui.ModelMap)
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:37:44] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:37:45] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:37:46] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [431] - Registering beans for JMX exposure on startup
+[ INFO ] [2016-05-30 17:37:46] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [912] - Bean with name 'dataSource' has been autodetected for JMX exposure
+[ INFO ] [2016-05-30 17:37:46] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [667] - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+[ INFO ] [2016-05-30 17:37:46] org.apache.coyote.http11.Http11NioProtocol [180] - Initializing ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:37:46] org.apache.coyote.http11.Http11NioProtocol [180] - Starting ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:37:46] org.apache.tomcat.util.net.NioSelectorPool [180] - Using a shared selector for servlet write/read
+[ INFO ] [2016-05-30 17:37:46] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [162] - Tomcat started on port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:37:46] com.xyf.boot.WebApplication [57] - Started WebApplication in 8.227 seconds (JVM running for 8.618)
+[ INFO ] [2016-05-30 17:38:14] com.xyf.boot.WebApplication [48] - Starting WebApplication on PC201501172208 with PID 6396 (D:\workspase\boot\target\classes started by Administrator in D:\workspase\boot)
+[ DEBUG] [2016-05-30 17:38:14] com.xyf.boot.WebApplication [51] - Running with Spring Boot v1.3.5.RELEASE, Spring v4.2.6.RELEASE
+[ INFO ] [2016-05-30 17:38:14] com.xyf.boot.WebApplication [666] - No active profile set, falling back to default profiles: default
+[ INFO ] [2016-05-30 17:38:15] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [578] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d75d90a: startup date [Mon May 30 17:38:15 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:38:15] org.hibernate.validator.internal.util.Version [30] - HV000001: Hibernate Validator 5.2.4.Final
+[ INFO ] [2016-05-30 17:38:16] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/ApplicationContext.xml]
+[ INFO ] [2016-05-30 17:38:16] org.springframework.beans.factory.xml.XmlBeanDefinitionReader [317] - Loading XML bean definitions from class path resource [conf/database/ApplicationContext-database.xml]
+[ INFO ] [2016-05-30 17:38:16] org.springframework.beans.factory.support.DefaultListableBeanFactory [839] - Overriding bean definition for bean 'characterEncodingFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=filterConfigure; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/xyf/boot/configure/FilterConfigure.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration; factoryMethodName=characterEncodingFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/HttpEncodingAutoConfiguration.class]]
+[ INFO ] [2016-05-30 17:38:17] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer [172] - Loading properties file from class path resource [conf/mybatis/dbconfig.properties]
+[ INFO ] [2016-05-30 17:38:17] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0' of type [class org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:38:17] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [328] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$21d04daf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [81] - Tomcat initialized with port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:38:18] org.apache.catalina.core.StandardService [180] - Starting service Tomcat
+[ INFO ] [2016-05-30 17:38:18] org.apache.catalina.core.StandardEngine [180] - Starting Servlet Engine: Apache Tomcat/8.0.33
+[ INFO ] [2016-05-30 17:38:18] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [180] - Initializing Spring embedded WebApplicationContext
+[ INFO ] [2016-05-30 17:38:18] org.springframework.web.context.ContextLoader [272] - Root WebApplicationContext: initialization completed in 3060 ms
+[ DEBUG] [2016-05-30 17:38:18] com.xyf.boot.configure.FilterConfigure [26] - ______load filter shiroFilter!
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.FilterRegistrationBean [258] - Mapping filter: 'requestContextFilter' to: [/*]
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.FilterRegistrationBean [271] - Mapping filter: 'shiroFilter' to urls: [/*]
+[ INFO ] [2016-05-30 17:38:18] org.springframework.boot.context.embedded.ServletRegistrationBean [189] - Mapping servlet: 'dispatcherServlet' to [/]
+[ INFO ] [2016-05-30 17:38:18] com.xyf.boot.filter.ShiroFilter [22] - -------shiro Filter doFilter_  init
+[ WARN ] [2016-05-30 17:38:19] org.apache.ibatis.io.ResolverUtil [264] - Could not examine class 'com/xyf/boot/generator/MyCommentGennerator.class' due to a java.lang.NoClassDefFoundError with message: org/mybatis/generator/api/CommentGenerator
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [539] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d75d90a: startup date [Mon May 30 17:38:15 CST 2016]; root of context hierarchy
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/]}" onto public org.springframework.web.servlet.ModelAndView com.xyf.boot.controller.MainController.index()
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/detail/{uuid}]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.showDetail(java.lang.String,org.springframework.ui.ModelMap)
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay/list.json]}" onto public com.xyf.boot.domain.base.JsonResult com.xyf.boot.controller.ReplayController.listJson(com.xyf.boot.domain.FmtCode)
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/replay]}" onto public java.lang.String com.xyf.boot.controller.ReplayController.replayList()
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [534] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:38:20] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [341] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2016-05-30 17:38:22] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [431] - Registering beans for JMX exposure on startup
+[ INFO ] [2016-05-30 17:38:22] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [912] - Bean with name 'dataSource' has been autodetected for JMX exposure
+[ INFO ] [2016-05-30 17:38:22] org.springframework.jmx.export.annotation.AnnotationMBeanExporter [667] - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+[ INFO ] [2016-05-30 17:38:22] org.apache.coyote.http11.Http11NioProtocol [180] - Initializing ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:38:22] org.apache.coyote.http11.Http11NioProtocol [180] - Starting ProtocolHandler ["http-nio-8088"]
+[ INFO ] [2016-05-30 17:38:22] org.apache.tomcat.util.net.NioSelectorPool [180] - Using a shared selector for servlet write/read
+[ INFO ] [2016-05-30 17:38:22] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [162] - Tomcat started on port(s): 8088 (http)
+[ INFO ] [2016-05-30 17:38:22] com.xyf.boot.WebApplication [57] - Started WebApplication in 7.996 seconds (JVM running for 8.374)
+[ INFO ] [2016-05-30 17:38:53] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [180] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[ INFO ] [2016-05-30 17:38:53] org.springframework.web.servlet.DispatcherServlet [487] - FrameworkServlet 'dispatcherServlet': initialization started
+[ INFO ] [2016-05-30 17:38:53] org.springframework.web.servlet.DispatcherServlet [506] - FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.controller.MainController [43] - 进入首页面
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.controller.MainController [44] - =========================
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.TemplateEngine [825] - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.templateresolver.AbstractTemplateResolver [99] - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.TemplateResolver
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.templateresolver.AbstractTemplateResolver [110] - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.messageresolver.AbstractMessageResolver [72] - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.messageresolver.AbstractMessageResolver [78] - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.TemplateEngine.CONFIG [123] - [THYMELEAF] TEMPLATE ENGINE CONFIGURATION:
+[THYMELEAF] * Cache Factory implementation: org.thymeleaf.cache.StandardCacheManager
+[THYMELEAF] * Template modes:
+[THYMELEAF]     * XML
+[THYMELEAF]     * VALIDXHTML
+[THYMELEAF]     * XHTML
+[THYMELEAF]     * VALIDXML
+[THYMELEAF]     * HTML5
+[THYMELEAF]     * LEGACYHTML5
+[THYMELEAF] * Template resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.templateresolver.TemplateResolver
+[THYMELEAF] * Message resolvers (in order):
+[THYMELEAF]     * org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+[THYMELEAF] * Dialect [1 of 2]: org.thymeleaf.spring4.dialect.SpringStandardDialect
+[THYMELEAF]     * Prefix: "th"
+[THYMELEAF] * Dialect [2 of 2]: nz.net.ultraq.thymeleaf.LayoutDialect
+[THYMELEAF]     * Prefix: "layout"
+[THYMELEAF] TEMPLATE ENGINE CONFIGURED OK
+[ INFO ] [2016-05-30 17:38:54] org.thymeleaf.TemplateEngine [838] - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:54] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:38:55] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.controller.MainController [43] - 进入首页面
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.controller.MainController [44] - =========================
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:02] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:06] com.xyf.boot.controller.ReplayController [32] - 进入报文比对查询主页面
+[ INFO ] [2016-05-30 17:39:06] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ INFO ] [2016-05-30 17:39:13] com.xyf.boot.controller.ReplayController [39] - 请求参数: PageBase [rows=10, page=1, startRow=0]
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.dao.impl.IDao [42] - dao selectTotalSize invoke  【com.xyf.boot.domain.FmtCode.selectTotalSize】
+[ INFO ] [2016-05-30 17:39:13] com.alibaba.druid.pool.DruidDataSource [722] - {dataSource-1} inited
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.domain.FmtCode.selectTotalSize [142] - ==>  Preparing: select count(1) from H_FMT_CODE where diffCode = ? 
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.domain.FmtCode.selectTotalSize [142] - ==> Parameters: 1(String)
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.domain.FmtCode.selectTotalSize [142] - <==      Total: 1
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.dao.impl.IDao [92] - dao selectList invoke  【 com.xyf.boot.domain.FmtCode.selectEverPage】
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.domain.FmtCode.selectEverPage [142] - ==>  Preparing: select * from H_FMT_CODE where diffCode = ? limit ?,? 
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.domain.FmtCode.selectEverPage [142] - ==> Parameters: 1(String), 0(Integer), 10(Integer)
+[ DEBUG] [2016-05-30 17:39:13] com.xyf.boot.domain.FmtCode.selectEverPage [142] - <==      Total: 10
+[ INFO ] [2016-05-30 17:39:13] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter
+[ DEBUG] [2016-05-30 17:39:14] com.xyf.boot.controller.ReplayController [48] - 传入参数: 11116
+[ DEBUG] [2016-05-30 17:39:14] com.xyf.boot.dao.impl.IDao [71] - dao selectOne invoke  【com.xyf.boot.domain.mapper.fixed.FmtCodeMapper.selectByPrimaryKey】
+[ DEBUG] [2016-05-30 17:39:14] com.xyf.boot.domain.mapper.fixed.FmtCodeMapper.selectByPrimaryKey [142] - ==>  Preparing: select uuid, tranCode, msgSeq, requestTime, responseTime, status, diffCode from h_fmt_code where uuid = ? 
+[ DEBUG] [2016-05-30 17:39:14] com.xyf.boot.domain.mapper.fixed.FmtCodeMapper.selectByPrimaryKey [142] - ==> Parameters: 11116(String)
+[ DEBUG] [2016-05-30 17:39:14] com.xyf.boot.domain.mapper.fixed.FmtCodeMapper.selectByPrimaryKey [142] - <==      Total: 1
+[ INFO ] [2016-05-30 17:39:14] com.xyf.boot.filter.ShiroFilter [29] - -------shiro Filter doFilter

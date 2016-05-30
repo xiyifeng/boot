@@ -21,6 +21,7 @@ import org.springframework.context.annotation.PropertySource;
 public class WebApplication {
 
 	public static void main(String[] args) throws Exception {
+		System.setProperty("logging.config", "classpath:conf/logback.xml");
 		SpringApplication.run(WebApplication.class, args);
 	}
 
