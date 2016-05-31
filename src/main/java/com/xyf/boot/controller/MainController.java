@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 主控
@@ -39,10 +39,26 @@ public class MainController {
 	}
 
 	@RequestMapping
-	public ModelAndView index() {
+	public String index() {
 		logger.info("进入首页面");
-		logger.info("=========================");
-		return new ModelAndView("index");
+		return "login";
 	}
 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		logger.info("登陆处理");
+		return "index";
+	}
+	
+	@RequestMapping(value = "/login")
+	public String login1()
+	{
+		return "index";
+	}
+
+	@RequestMapping("/logout")
+	public String logout() {
+		logger.info("登出处理");
+		return "login";
+	}
 }

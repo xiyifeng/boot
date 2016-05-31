@@ -16,8 +16,9 @@ public class IDao<T> implements Dao<T> {
 
 	private static final Logger logger = LoggerFactory.getLogger(IDao.class);
 	private static final String PREFIX = PackageInfo.class.getName().substring(
-			0, PackageInfo.class.getName().lastIndexOf("."))+".";
-	
+			0, PackageInfo.class.getName().lastIndexOf("."))
+			+ ".";
+
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 
@@ -97,6 +98,11 @@ public class IDao<T> implements Dao<T> {
 	public Object selectOneByConds(String statement, Object condObj) {
 		logger.debug("dao selectOne invoke  【" + statement + "】");
 		return sqlSessionTemplate.selectOne(statement, condObj);
+	}
+
+	@Override
+	public List<Object> selectListByConds(String statement, Object params) {
+		return sqlSessionTemplate.selectList(statement, params);
 	}
 
 }

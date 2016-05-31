@@ -32,5 +32,8 @@ public interface Dao<T> {
 	public Object selectOne(String statement, T t);
 
 	public Object selectOneByConds(String statement, Object condObj);
+	
+	public List<Object> selectListByConds(String statement, Object params);
+	
 
 }
