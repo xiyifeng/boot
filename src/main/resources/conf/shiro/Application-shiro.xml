@@ -30,13 +30,12 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<!-- 权限配置 -->
 		<property name="filterChainDefinitions">
 			<value>
-				<!-- anon表示此地址不需要任何权限即可访问 -->
 				/=anon
 				/css/**=anon
 				/login/**=anon
 				/js/**=anon
 				/custom/**=anon
-				/** = authc
+				/**=authc
 			</value>
 		</property>
 	</bean>

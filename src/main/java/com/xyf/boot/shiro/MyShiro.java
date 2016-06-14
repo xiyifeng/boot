@@ -39,9 +39,6 @@ public class MyShiro extends AuthorizingRealm {
 	@Autowired
 	private UserService userService;
 
-	// @Autowired
-	// private CredentialsMatcher credentialsMatcher;
-
 	/**
 	 * 授权操作，决定那些角色可以使用那些资源
 	 */

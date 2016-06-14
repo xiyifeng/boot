@@ -16,6 +16,9 @@
 
 package com.xyf.boot.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.apache.shiro.SecurityUtils;
@@ -37,6 +40,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.xyf.boot.domain.User;
 import com.xyf.boot.domain.base.ResultMessage;
+import com.xyf.boot.domain.info.Menu;
 import com.xyf.boot.util.Constants;
 import com.xyf.boot.util.JsonUtil;
 
@@ -67,7 +71,8 @@ public class MainController {
 
 	@RequestMapping("/index")
 	public String index() {
-		logger.info("登陆成功后进入主页面");
+		boolean dn = SecurityUtils.getSubject().isPermitted("/index");
+		logger.info("进入主页面{}", dn);
 		return "index";
 	}
 
@@ -116,12 +121,48 @@ public class MainController {
 		return res;
 	}
 
-	@RequestMapping(value="/logout", method=RequestMethod.POST)
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public String logout(User user) {
 		Subject subject = SecurityUtils.getSubject();
-		logger.info("用户登出{}", subject.getSession().getAttribute(Constants.KEY_USER));
+		logger.info("用户登出{}",
+				subject.getSession().getAttribute(Constants.KEY_USER));
 		subject.logout();
 		return "login";
 	}
 
+	@RequestMapping(value = "/loadMenu", method = RequestMethod.POST)
+	@ResponseBody
+	public Object loadMenu() {
+		logger.info("加载菜单!");
+		List<Menu> rights = new ArrayList<Menu>();
+		Menu r = new Menu();
+		r.setIconCls("icon-sum");
+		r.setUrl("/replay");
+		r.setName("报文对比");
+		
+		List<Menu> rights2 = new ArrayList<Menu>();
+		Menu r2 = new Menu();
+		r2.setIconCls("icon-large-picture");
+		r2.setUrl("/replay");
+		r2.setName("报文对比");
+		rights2.add(r2);
+		r.setChild(rights2);
+		
+		rights.add(r);
+		
+		r = new Menu();
+		r.setIconCls("icon-sum");
+		r.setUrl("/replay");
+		r.setName("报文对比");
+		
+		rights2 = new ArrayList<Menu>();
+		r2 = new Menu();
+		r2.setIconCls("icon-large-picture");
+		r2.setUrl("/replay");
+		r2.setName("报文对比");
+		rights2.add(r2);
+		r.setChild(rights2);
+		rights.add(r);
+		return rights;
+	}
 }
