@@ -140,10 +140,10 @@ public class MainController {
 	@RequestMapping(value = "/loadMenu", method = RequestMethod.POST)
 	@ResponseBody
 	public Object loadMenu() {
-		logger.info("加载菜单!");
+		logger.debug("加载菜单!");
 		List<Right> rights = rightService.findAllRightByUserCode(SystemUtil
 				.currentUserCode());
-		logger.info("权限:{}", rights);
+		logger.debug("权限:{}", rights);
 		if (rights == null || rights.size() == 0) {
 			return new ResultMessage(ResultMessage.FAIL, Constants.NO_RIGHTS);
 		}
@@ -172,7 +172,7 @@ public class MainController {
 				}
 			}
 		}
-		logger.info("菜单:{}", menus);
+		logger.debug("菜单:{}", menus);
 		return menus;
 	}
 }
