@@ -12,7 +12,7 @@
 		and b.role_code = c.roleCode 
 		and c.roleCode = f.role_code 
 		and d.user_code = f.user_code 
-		and d.user_code = #{userCode,jdbcType=VARCHAR}
+		and d.user_code = #{usercode,jdbcType=VARCHAR}
 	</select>
 
 </mapper>

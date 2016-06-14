@@ -6,6 +6,7 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 
 @Configuration
 public class FilterConfigure {
@@ -13,22 +14,19 @@ public class FilterConfigure {
 	private static final Logger logger = LoggerFactory
 			.getLogger(FilterConfigure.class);
 
-//	@Bean
-//	public FilterRegistrationBean shiroFilterRegistration() {
-//		FilterRegistrationBean registration = new FilterRegistrationBean();
-//		registration.setFilter(crtDelegatingFilterProxy());
-//		registration.addUrlPatterns("/*");
-//		registration.addInitParameter("targetFilterLifecycle", "true");
-//		registration.setOrder(1);
-//		logger.debug("______load filter shiroFilter!");
-//		return registration;
-//	}
-//
-//	@Bean
-//	public DelegatingFilterProxy crtDelegatingFilterProxy() {
-//		return new DelegatingFilterProxy();
-//	}
-
+	@Bean
+	public FilterRegistrationBean shiroFilterRegistration() {
+		FilterRegistrationBean registration = new FilterRegistrationBean();
+		DelegatingFilterProxy proxy = new DelegatingFilterProxy("shiroFilter");
+		registration.setFilter(proxy);
+		registration.setEnabled(true);
+		registration.addUrlPatterns("/*");
+		registration.addInitParameter("targetFilterLifecycle", "false");
+		registration.setOrder(1);
+		logger.debug("______load filter shiroFilter!<<<" + proxy);
+		return registration;
+	}
+	
 	@Bean
 	public FilterRegistrationBean characterEncodingFilter() {
 		FilterRegistrationBean registration = new FilterRegistrationBean();

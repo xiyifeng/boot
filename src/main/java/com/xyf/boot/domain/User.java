@@ -1,115 +1,132 @@
 package com.xyf.boot.domain;
 
+import javax.validation.constraints.NotNull;
+
 import com.xyf.boot.domain.base.PageBase;
 
 public class User extends PageBase {
-    private String userCode;
+	private static final long serialVersionUID = -1542612948724816135L;
 
-    private String userName;
+	private String usercode;
 
-    private String password;
+	@NotNull(message = "用户名不能为空")
+	private String username;
 
-    private String position;
+	@NotNull(message = "密码不能为空")
+	private String password;
 
-    private String email;
+	private String position;
 
-    private String mobilPhone;
+	private String email;
 
-    private String status;
+	private String mobilPhone;
 
-    private String lang;
+	private String status;
 
-    private String theme;
+	private String lang;
 
-    private Integer errorLoginTimes;
+	private String theme;
 
-    private String remark;
+	private Integer errorLoginTimes;
 
-    public String getUserCode() {
-        return userCode;
-    }
+	private String remark;
 
-    public void setUserCode(String userCode) {
-        this.userCode = userCode == null ? null : userCode.trim();
-    }
+	public String getUsercode() {
+		return usercode;
+	}
 
-    public String getUserName() {
-        return userName;
-    }
+	public void setUsercode(String usercode) {
+		this.usercode = usercode;
+	}
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public String getPosition() {
-        return position;
-    }
+	public void setPassword(String password) {
+		this.password = password == null ? null : password.trim();
+	}
 
-    public void setPosition(String position) {
-        this.position = position == null ? null : position.trim();
-    }
+	public String getPosition() {
+		return position;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setPosition(String position) {
+		this.position = position == null ? null : position.trim();
+	}
 
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getMobilPhone() {
-        return mobilPhone;
-    }
+	public void setEmail(String email) {
+		this.email = email == null ? null : email.trim();
+	}
 
-    public void setMobilPhone(String mobilPhone) {
-        this.mobilPhone = mobilPhone == null ? null : mobilPhone.trim();
-    }
+	public String getMobilPhone() {
+		return mobilPhone;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public void setMobilPhone(String mobilPhone) {
+		this.mobilPhone = mobilPhone == null ? null : mobilPhone.trim();
+	}
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public String getLang() {
-        return lang;
-    }
+	public void setStatus(String status) {
+		this.status = status == null ? null : status.trim();
+	}
 
-    public void setLang(String lang) {
-        this.lang = lang == null ? null : lang.trim();
-    }
+	public String getLang() {
+		return lang;
+	}
 
-    public String getTheme() {
-        return theme;
-    }
+	public void setLang(String lang) {
+		this.lang = lang == null ? null : lang.trim();
+	}
 
-    public void setTheme(String theme) {
-        this.theme = theme == null ? null : theme.trim();
-    }
+	public String getTheme() {
+		return theme;
+	}
 
-    public Integer getErrorLoginTimes() {
-        return errorLoginTimes;
-    }
+	public void setTheme(String theme) {
+		this.theme = theme == null ? null : theme.trim();
+	}
 
-    public void setErrorLoginTimes(Integer errorLoginTimes) {
-        this.errorLoginTimes = errorLoginTimes;
-    }
+	public Integer getErrorLoginTimes() {
+		return errorLoginTimes;
+	}
 
-    public String getRemark() {
-        return remark;
-    }
+	public void setErrorLoginTimes(Integer errorLoginTimes) {
+		this.errorLoginTimes = errorLoginTimes;
+	}
 
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark == null ? null : remark.trim();
+	}
+
+	@Override
+	public String toString() {
+		return "User [usercode=" + usercode + ", username=" + username
+				+ ", password=" + password + ", position=" + position
+				+ ", email=" + email + ", mobilPhone=" + mobilPhone
+				+ ", status=" + status + ", lang=" + lang + ", theme=" + theme
+				+ ", errorLoginTimes=" + errorLoginTimes + ", remark=" + remark
+				+ "]";
+	}
+
 }

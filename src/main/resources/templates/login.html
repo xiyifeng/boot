@@ -3,32 +3,56 @@
 	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
 	layout:decorator="content">
 <head>
-<title>login</title>
+<meta charset="UTF-8" />
+<title>Replay System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords"
+	content="html5, css3, form, switch, animation, :target, pseudo-class" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" th:href="@{/custom/css/demo.css}"
+	href="css/demo.css" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/custom/css/style.css}" href="css/style.css" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/custom/css/animate-custom.css}"
+	href="css/animate-custom.css" />
 <script type="text/javascript" th:src="@{/js/login.js}"></script>
 </head>
 <body>
-	<div layout:fragment="content">
-		<form id="loginForm" action="login" method="post"
-			style="margin-left:40%;margin-top:200px;">
-			<table>
-				<tr>
-					<th>用户名</th>
-					<td><input class="easyui-validatebox" type="text"
-						name="userName" data-options="required:true" style="width:150px;" value="xiyf" />
-					</td>
-				</tr>
-				<tr>
-					<th><label for="password" style="width:80px;">密&nbsp;码</label></th>
-					<td><input class="easyui-validatebox" type="password"
-						name="password" data-options="required:true" style="width:150px;" value="xiyf"/>
-					</td>
-				</tr>
-			</table>
-			<div style="padding-left:100px;">
-				<a id="loginButton" href="javascript:login();" class="easyui-linkbutton"
-					data-options="iconCls:'icon-ok'">登&nbsp;&nbsp;陆</a>
+	<div class="container" layout:fragment="content">
+		<section style="margin-top:10%;">
+			<div id="container_demo">
+				<a class="hiddenanchor" id="toregister"></a> <a class="hiddenanchor"
+					id="tologin"></a>
+				<div id="wrapper">
+					<div id="login" class="animate form">
+						<form action="login" autocomplete="on">
+							<h1>Replay System</h1>
+							<p>
+								<label for="username" class="uname" data-icon="u">用户名</label> <input
+									id="username" name="username" type="text"
+									placeholder="eg. username" nullmsg="用户名不能 为空!" />
+							</p>
+							<p>
+								<label for="password" class="youpasswd" data-icon="p">
+									密码 </label> <input id="password" name="password" 
+									type="password" placeholder="eg. X8df!90EO"
+									nullmsg="密码不能为空!" />
+							</p>
+							<p class="keeplogin">
+								<input type="checkbox" name="loginkeeping" id="loginkeeping"
+									value="loginkeeping" /> <label for="loginkeeping">记住我</label>
+							</p>
+							<p class="login button">
+								<input type="button" value="登陆" id="loginButton" />
+							</p>
+							<p><div id="alertMessage"></div></p>
+						</form>
+					</div>
+				</div>
+				<div id="alertMessage"></div>
 			</div>
-		</form>
+		</section>
 	</div>
 </body>
 </html>

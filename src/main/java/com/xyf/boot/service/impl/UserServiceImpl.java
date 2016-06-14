@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findByName(String userCode) {
 		User user = new User();
-		user.setUserCode(userCode);
+		user.setUsercode(userCode);
 		return (User) dao.selectOne(user);
 	}
 
