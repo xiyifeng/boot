@@ -31,6 +31,7 @@ import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,11 +39,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.xyf.boot.domain.Right;
 import com.xyf.boot.domain.User;
 import com.xyf.boot.domain.base.ResultMessage;
 import com.xyf.boot.domain.info.Menu;
+import com.xyf.boot.service.RightService;
 import com.xyf.boot.util.Constants;
 import com.xyf.boot.util.JsonUtil;
+import com.xyf.boot.util.SystemUtil;
 
 /**
  * 主控
@@ -55,6 +59,9 @@ import com.xyf.boot.util.JsonUtil;
 public class MainController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(MainController.class);
+
+	@Autowired
+	private RightService rightService;
 
 	public MainController() {
 	}
@@ -71,8 +78,8 @@ public class MainController {
 
 	@RequestMapping("/index")
 	public String index() {
-		boolean dn = SecurityUtils.getSubject().isPermitted("/index");
-		logger.info("进入主页面{}", dn);
+		// boolean dn = SecurityUtils.getSubject().isPermitted("/index");
+		logger.info("进入主页面");
 		return "index";
 	}
 
@@ -134,35 +141,38 @@ public class MainController {
 	@ResponseBody
 	public Object loadMenu() {
 		logger.info("加载菜单!");
-		List<Menu> rights = new ArrayList<Menu>();
-		Menu r = new Menu();
-		r.setIconCls("icon-sum");
-		r.setUrl("/replay");
-		r.setName("报文对比");
-		
-		List<Menu> rights2 = new ArrayList<Menu>();
-		Menu r2 = new Menu();
-		r2.setIconCls("icon-large-picture");
-		r2.setUrl("/replay");
-		r2.setName("报文对比");
-		rights2.add(r2);
-		r.setChild(rights2);
-		
-		rights.add(r);
-		
-		r = new Menu();
-		r.setIconCls("icon-sum");
-		r.setUrl("/replay");
-		r.setName("报文对比");
-		
-		rights2 = new ArrayList<Menu>();
-		r2 = new Menu();
-		r2.setIconCls("icon-large-picture");
-		r2.setUrl("/replay");
-		r2.setName("报文对比");
-		rights2.add(r2);
-		r.setChild(rights2);
-		rights.add(r);
-		return rights;
+		List<Right> rights = rightService.findAllRightByUserCode(SystemUtil
+				.currentUserCode());
+		logger.info("权限:{}", rights);
+		if (rights == null || rights.size() == 0) {
+			return new ResultMessage(ResultMessage.FAIL, Constants.NO_RIGHTS);
+		}
+		List<Menu> menus = new ArrayList<Menu>();
+		Menu menu = null;
+		// D-主菜单 处理
+		for (Right right : rights) {
+			if ("D".equals(right.getRightType())) {
+				menu = new Menu();
+				menu.setId(right.getRightId() + "");
+				menu.setName(right.getRightName());
+				menu.setUrl(right.getUrl());
+				menu.setIconCls(right.getIconCls());
+				menus.add(menu);
+			}
+		}
+		for (Menu mn : menus) {
+			for (Right right : rights) {
+				if (mn.getId().equals(right.getSuperRightId()+"")) {
+					menu = new Menu();
+					menu.setId(right.getRightId() + "");
+					menu.setName(right.getRightName());
+					menu.setUrl(right.getUrl());
+					menu.setIconCls(right.getIconCls());
+					mn.addItem(menu);
+				}
+			}
+		}
+		logger.info("菜单:{}", menus);
+		return menus;
 	}
 }

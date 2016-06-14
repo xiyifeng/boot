@@ -10,7 +10,17 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+	</settings>
 	<typeAliases>
-		<package name="com.xyf.boot" />
+		<typeAlias type="com.xyf.boot.domain.Right" alias="Right" />
+		<typeAlias type="com.xyf.boot.domain.FmtCode" alias="FmtCode" />
+		<typeAlias type="com.xyf.boot.domain.Role" alias="Role" />
+		<typeAlias type="com.xyf.boot.domain.RoleRight" alias="RoleRight" />
+		<typeAlias type="com.xyf.boot.domain.User" alias="User" />
+		<typeAlias type="com.xyf.boot.domain.UserRole" alias="UserRole" />
 	</typeAliases>
 </configuration>

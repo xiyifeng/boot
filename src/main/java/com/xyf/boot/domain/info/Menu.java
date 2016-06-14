@@ -69,4 +69,20 @@ public class Menu implements Serializable {
 		this.child = child;
 	}
 
+	/**
+	 * 增加子项
+	 * 
+	 * @param menu
+	 */
+	public void addItem(Menu menu) {
+		this.child.add(menu);
+	}
+
+	@Override
+	public String toString() {
+		return "Menu [id=" + id + ", pid=" + pid + ", name=" + name
+				+ ", iconCls=" + iconCls + ", url=" + url + ", child=" + child
+				+ "]";
+	}
+
 }

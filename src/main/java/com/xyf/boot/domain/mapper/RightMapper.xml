@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyf.boot.domain.Right">
+
+	<resultMap id="BaseResultMap" type="com.xyf.boot.domain.Right">
+		<id column="right_id" property="rightId" jdbcType="INTEGER" />
+		<result column="right_name" property="rightName" jdbcType="VARCHAR" />
+		<result column="super_right_id" property="superRightId"
+			jdbcType="INTEGER" />
+		<result column="super_right_name" property="superRightName"
+			jdbcType="VARCHAR" />
+		<result column="sort" property="sort" jdbcType="INTEGER" />
+		<result column="right_type" property="rightType" jdbcType="VARCHAR" />
+		<result column="icon_cls" property="iconCls" jdbcType="VARCHAR" />
+		<result column="url" property="url" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="creater" property="creater" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<result column="modifyer" property="modifyer" jdbcType="VARCHAR" />
+		<result column="modify_time" property="modifyTime" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="findUserMenu" parameterType="string" resultMap="BaseResultMap" >
+		select a.* from h_right a,h_role_right b,h_role
+		c,h_user d,h_user_role
+		f
+		where a.right_id = b.right_id
+		and b.role_code = c.roleCode
+		and c.roleCode = f.role_code
+		and d.user_code = f.user_code
+		and d.user_code = #{usercode,jdbcType=VARCHAR}
+	</select>
+
+</mapper>
