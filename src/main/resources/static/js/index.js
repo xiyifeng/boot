@@ -28,8 +28,17 @@ function initMenu(){
 /**
  * 退出系统
  */
-function logout() {
-	$.messager.confirm("提示", "确认退出系统吗?", function(r) {
+function logout( type ) {
+	var msg;
+	if( type )
+	{
+		msg = "确认退出系统吗?";
+	}
+	else
+	{
+		msg = "确认重新登陆吗?";
+	}
+	$.messager.confirm("提示", msg, function(r) {
 		if (r) {
 			$.ajax({
 				async : false,
@@ -44,4 +53,20 @@ function logout() {
 			});
 		}
 	});
+}
+
+/**
+ * 密码修改
+ */
+function passwordModify()
+{
+	$.messager.alert("提示", "密码修改暂未开通!");
+}
+
+/**
+ * 说明
+ */
+function help()
+{
+	$.messager.alert("说明", "Copyright @ xiyifeng 2016 - 2020 All rights reserved");
 }
