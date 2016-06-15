@@ -4,15 +4,60 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xyf.boot.domain.User">
 
+	<resultMap id="BaseResultMap" type="com.xyf.boot.domain.User">
+		<id column="user_code" property="usercode" jdbcType="VARCHAR" />
+		<result column="user_name" property="username" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="position" property="position" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="mobil_phone" property="mobilPhone" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="lang" property="lang" jdbcType="VARCHAR" />
+		<result column="theme" property="theme" jdbcType="VARCHAR" />
+		<result column="error_login_times" property="errorLoginTimes"
+			jdbcType="INTEGER" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+
 	<select id="findUserAllPermission" parameterType="string"
 		resultType="string">
 		select a.right_id from h_right a,h_role_right b,h_role
 		c,h_user d,h_user_role f
-		where a.right_id = b.right_id 
-		and b.role_code = c.roleCode 
-		and c.roleCode = f.role_code 
-		and d.user_code = f.user_code 
+		where a.right_id = b.right_id
+		and b.role_code =
+		c.roleCode
+		and c.roleCode = f.role_code
+		and d.user_code = f.user_code
 		and d.user_code = #{usercode,jdbcType=VARCHAR}
 	</select>
 
+	<select id="selectEverPage" resultMap="BaseResultMap"
+		parameterType="User">
+		select * from h_user
+		where 1=1
+		<if test="usercode != null and usercode.trim() != ''">
+		and user_code = #{usercode,jdbcType=VARCHAR}
+		</if>
+		<if test="username != null and username.trim() != ''">
+		and user_name = #{username,jdbcType=VARCHAR}
+		</if>
+		<if test="status != null and status.trim() != ''">
+		and status = #{status,jdbcType=VARCHAR}
+		</if>
+		limit #{startRow},#{rows}
+	</select>
+	
+	<select id="selectTotalSize" parameterType="User" resultType="int">
+		select count(1) from h_user
+		where 1=1
+		<if test="usercode != null and usercode.trim() != ''">
+		and user_code = #{usercode,jdbcType=VARCHAR}
+		</if>
+		<if test="username != null and username.trim() != ''">
+		and user_name = #{username,jdbcType=VARCHAR}
+		</if>
+		<if test="status != null and status != ''">
+		and status = #{status,jdbcType=VARCHAR}
+		</if>
+	</select>
 </mapper>

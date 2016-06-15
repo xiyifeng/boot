@@ -32,4 +32,9 @@ public class JsonResult {
 		this.rows = rows;
 	}
 
+	@Override
+	public String toString() {
+		return "JsonResult [total=" + total + ", rows=" + rows + "]";
+	}
+	
 }

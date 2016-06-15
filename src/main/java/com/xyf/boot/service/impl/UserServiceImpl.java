@@ -25,9 +25,20 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<String> getUserPermission(String userCode) {
-		List list = dao.selectListByConds(
-				User.class.getName()+".findUserAllPermission", userCode);
+		List list = dao.selectListByConds(User.class.getName()
+				+ ".findUserAllPermission", userCode);
 		return list;
+	}
+
+	@Override
+	public List<User> selectEverPage(User user) {
+		return dao.selectEverPage(User.class.getName() + ".selectEverPage",
+				user);
+	}
+
+	@Override
+	public int selectTotalSize(User user) {
+		return dao.selectTotalSize(user);
 	}
 
 }

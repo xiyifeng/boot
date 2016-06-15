@@ -33,7 +33,7 @@ public class ReplayController {
 		return "replay/list";
 	}
 
-	@RequestMapping("/list.json")
+	@RequestMapping("/list")
 	@ResponseBody
 	public JsonResult listJson(FmtCode fmtCode) {
 		logger.info("请求参数: " + fmtCode);

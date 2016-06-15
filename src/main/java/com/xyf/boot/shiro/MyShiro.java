@@ -93,7 +93,7 @@ public class MyShiro extends AuthorizingRealm {
 		Subject currentUser = SecurityUtils.getSubject();
 		if (null != currentUser) {
 			Session session = currentUser.getSession();
-			logger.debug("Session默认超时时间为[" + session.getTimeout() + "]毫秒");
+			logger.debug("Session默认会话时间为[" + session.getTimeout() + "]毫秒");
 			if (null != session) {
 				session.setAttribute(key, value);
 			}

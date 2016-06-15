@@ -1,0 +1,129 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="content">
+<head>
+<title>用户管理</title>
+</head>
+<body>
+	<div layout:fragment="content" class="container"
+		style="height:400px;width:600px;margin: 1px 1px 1px 1px;">
+		<table id="dg"></table>
+		<form id="conds">
+			<table>
+				<tr>
+					<td style="width:60px;"><p align="center">用户号</p></td>
+					<td>
+						<input id="usercode" name="usercode" class="easyui-validatebox" />  
+					</td>
+					<td style="width:60px;"><p align="center">用户名称</p></td>
+					<td>
+						<input id="username" name="username" class="easyui-validatebox" />
+					</td>
+					<td style="width:60px;"><p align="center">状态</p></td>
+					<td><input id="status" class="easyui-combobox"
+						name="status"
+						data-options="valueField:'id',textField:'text',value:'1',data:[{'id':0,'text':'0-无效'},{'id':1,'text':'1-有效'}]" />
+					</td>
+					<td><a id="searchId" href="javascript:doFind();"
+						class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+			$(function() {
+				$('#dg').datagrid({
+					url : '',
+					iconCls : 'icon-save',
+					width : 1200,
+					height : 450,
+					fitColumns : true,
+					singleSelect : true,
+					striped : false,
+					method : "post",
+					loadMsg : "数据加载中",
+					pagination : true,
+					rownumbers : true,
+					singleSelect : true,
+					pagePosition : "bottom",
+					toolbar : "#conds",
+					columns : [ [ {
+						field : 'usercode',
+						title : '用户号',
+						width : 80
+					}, {
+						field : 'username',
+						title : '用户名称',
+						width : 120
+					}, {
+						field : 'position',
+						title : '职位',
+						width : 100,
+						align : 'right'
+					}, {
+						field : 'email',
+						title : 'EMAIL',
+						width : 150,
+						align : 'right'
+					}, {
+						field : 'mobilPhone',
+						title : '移动号码',
+						width : 150
+					}, {
+						field : 'status',
+						title : '状态',
+						width : 60,
+						align : 'center'
+					}, {
+						field : 'lang',
+						title : '语言',
+						width : 60,
+						align : 'center'
+					}, {
+						field : 'theme',
+						title : '主题',
+						width : 60,
+						align : 'center'
+					} , {
+						field : 'errorLoginTimes',
+						title : '错误登陆次数',
+						width : 60,
+						align : 'center'
+					} , {
+						field : 'remark',
+						title : '备注',
+						width : 60,
+						align : 'center'
+					}] ],
+					onDblClickRow : function(rowIndex, rowData) {
+						showDetail(rowData.usercode);
+					}
+				});
+			});
+
+			function doFind() {
+				var o = serializeObject("#conds");
+				$("#dg").datagrid({
+					queryParams : o,
+					url : "/user/list"
+				});
+			}
+
+			// 详细信息展示
+			function showDetail(uuid) {
+				window.parent.$("#childUse").window({
+					title : "用户信息",
+					width : 1100,
+					height : 500,
+					collapsible : false,
+					modal : true,
+					inline : false,
+					href : "/user/detail/"+usercode
+				});
+			}
+		</script>
+		<div id="win"></div>
+	</div>
+
+</body>
+</html>

@@ -4,8 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xyf.boot.domain.FmtCode">
 
-	<select id="selectEverPage" parameterType="com.xyf.boot.domain.FmtCode"
-		resultType="com.xyf.boot.domain.FmtCode">
+	<select id="selectEverPage" parameterType="FmtCode" resultType="FmtCode">
 		select * from H_FMT_CODE
 		<if test="diffCode != null and diffCode != ''">
 			where diffCode = #{diffCode}
@@ -13,7 +12,7 @@
 		limit #{startRow},#{rows}
 	</select>
 
-	<select id="selectTotalSize" resultType="int">
+	<select id="selectTotalSize" parameterType="FmtCode" resultType="int">
 		select count(1) from H_FMT_CODE
 		<if test="diffCode != null and diffCode != ''">
 			where diffCode = #{diffCode}
