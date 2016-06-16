@@ -31,7 +31,7 @@ public class ErrorCodeCache implements Serializable {
 				+ File.separator + "errorCode.properties");
 		InputStream is = new FileInputStream(file);
 		errorCode.load(is);
-		logger.info("加载错误码为: \n {}", errorCode);
+		logger.debug("加载错误码为: \n {}", errorCode);
 	}
 
 }

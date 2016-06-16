@@ -31,7 +31,7 @@ public class CacheInit implements CommandLineRunner, Ordered {
 	public void run(String... args) throws Exception {
 		try {
 			ErrorCodeCache.loadErrorCache();
-			logger.info("加载错误码成功");
+			logger.debug("加载错误码成功");
 		} catch (IOException e) {
 			logger.error("加载错误码失败, {}", e.getCause());
 			throw new RuntimeException(e.getMessage(), e.getCause());
