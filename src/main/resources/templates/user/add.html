@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="content">
+<head>
+<title>用户信息</title>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+<link rel="stylesheet" type="text/css" th:href="@{/custom/css/form.css}"
+	href="../../static/custom/css/form.css" />
+</head>
+<body>
+	<div layout:fragment="content" style="margin: 10px 8% 8% 8%;">
+		<form id="userForm" method="post" action="/user/add">
+			<fieldset>
+				<legend>
+					<img src="/css/icons/pencil.png" />用户信息
+				</legend>
+				<table align="center">
+					<tr>
+						<th>用户编号</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="usercode" data-options="required:true,width:200px" /></td>
+					</tr>
+					<tr>
+						<th>用户名称</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="username" data-options="width:200px" /></td>
+					</tr>
+					<tr>
+						<th>用户名</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="position" data-options="width:200px" /></td>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="email" data-options="width:200px" /></td>
+					</tr>
+					<tr>
+						<th>移动号码</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="mobilPhone" data-options="width:200px" /></td>
+					</tr>
+					<tr>
+						<th>状态</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="status" data-options="width:200px" /></td>
+					</tr>
+					<tr>
+						<th>说明</th>
+						<td><input class="easyui-validatebox" type="text"
+							name="remark" data-options="width:200px" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

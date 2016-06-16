@@ -1,5 +1,6 @@
 package com.xyf.boot.util;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -7,12 +8,70 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
+import com.xyf.boot.cache.ErrorCodeCache;
 import com.xyf.boot.domain.base.JsonResult;
-import com.xyf.boot.domain.base.ResultMessage;
 
 public class JsonUtil {
 
 	public static final Logger logger = LoggerFactory.getLogger(JsonUtil.class);
+
+	/**
+	 * 返回消息提示
+	 * 
+	 * @author xiyifeng
+	 * @date 2016年6月16日
+	 */
+	static class ResultMessage implements Serializable {
+		private static final long serialVersionUID = 3259486722003198580L;
+		/**
+		 * 标题
+		 */
+		private String title;
+		/**
+		 * 状态码(成功为"0000", 失败为其他4位数字)
+		 */
+		private String code;
+		/**
+		 * 消息
+		 */
+		private String message;
+
+		public ResultMessage() {
+			super();
+		}
+
+		public ResultMessage(String code, String message) {
+			super();
+			this.title = "信息";
+			this.code = code;
+			this.message = message;
+		}
+
+		public String getMessage() {
+			return message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getCode() {
+			return code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+	}
 
 	/**
 	 * JOSN表数据结构
@@ -37,7 +96,7 @@ public class JsonUtil {
 	 *            验证错误集
 	 * @return 返回结果
 	 */
-	public static ResultMessage genResultMessage(BindingResult bindingResult) {
+	public static Serializable genResultMessage(BindingResult bindingResult) {
 		List<ObjectError> ers = bindingResult.getAllErrors();
 		StringBuffer sb = new StringBuffer();
 		for (ObjectError oe : ers) {
@@ -45,11 +104,54 @@ public class JsonUtil {
 		}
 
 		ResultMessage rm = new ResultMessage();
-		rm.setStatus(ResultMessage.FAIL);
+		rm.setCode("9999");
 		rm.setMessage(sb.toString());
 
 		logger.info("表单验证: " + sb.toString());
 		return rm;
+	}
+
+	/**
+	 * 生成成功处理结果消息
+	 * 
+	 * @return 处理结果
+	 */
+	public static Serializable genSuccessResultMessage() {
+		return genMessage("0000", "交易成功");
+	}
+
+	/**
+	 * 生成成功处理结果消息
+	 * 
+	 * @param Message
+	 *            返回显示消息
+	 * @return 处理结果
+	 */
+	public static Serializable genSuccessResultMessage(String message) {
+		return new ResultMessage("0000", message);
+	}
+
+	/**
+	 * 生成失败处理结果消息
+	 * 
+	 * @param code
+	 *            错误码
+	 * @return
+	 */
+	public static Serializable genFailResultMessage(String code) {
+		return genMessage(code, "交易失败");
+	}
+
+	private static Serializable genMessage(String code, String message) {
+		ResultMessage rs = new ResultMessage();
+		rs.setCode(code);
+		String msg = ErrorCodeCache.errorCode.getProperty(code);
+		if (msg == null || msg.trim().length() == 0) {
+			rs.setMessage(message);
+		} else {
+			rs.setMessage(msg);
+		}
+		return rs;
 	}
 
 }

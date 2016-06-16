@@ -41,7 +41,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.xyf.boot.domain.Right;
 import com.xyf.boot.domain.User;
-import com.xyf.boot.domain.base.ResultMessage;
 import com.xyf.boot.domain.info.Menu;
 import com.xyf.boot.service.RightService;
 import com.xyf.boot.util.Constants;
@@ -85,7 +84,7 @@ public class MainController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public Object login(@Valid User user, BindingResult bindingResult,
+	public Object login(User user, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 		logger.info("登陆用户{} ", user);
 		if (bindingResult.hasErrors()) {
@@ -94,38 +93,25 @@ public class MainController {
 
 		Subject subject = SecurityUtils.getSubject();
 		UsernamePasswordToken token = new UsernamePasswordToken(
-				user.getUsername(), user.getPassword());
-		ResultMessage res = new ResultMessage();
+				user.getUsercode(), user.getPassword());
 		try {
 			subject.login(token);
 		} catch (UnknownSessionException use) {
 			subject = new Subject.Builder().buildSubject();
 			subject.login(token);
-			logger.error("{}{}", Constants.UNKNOWN_SESSION_EXCEPTION,
-					use.getCause());
-			logger.error(Constants.UNKNOWN_SESSION_EXCEPTION);
-			res.setErrorMessage(Constants.UNKNOWN_SESSION_EXCEPTION);
+			return JsonUtil.genFailResultMessage("1001");
 		} catch (UnknownAccountException ex) {
-			logger.error("{}{}", Constants.UNKNOWN_ACCOUNT_EXCEPTION,
-					ex.getCause());
-			res.setErrorMessage(Constants.UNKNOWN_ACCOUNT_EXCEPTION);
+			return JsonUtil.genFailResultMessage("1002");
 		} catch (IncorrectCredentialsException ice) {
-			logger.error("{}{}", Constants.INCORRECT_CREDENTIALS_EXCEPTION,
-					ice.getCause());
-			res.setErrorMessage(Constants.INCORRECT_CREDENTIALS_EXCEPTION);
+			return JsonUtil.genFailResultMessage("1003");
 		} catch (LockedAccountException lae) {
-			logger.error("{}{}", Constants.LOCKED_ACCOUNT_EXCEPTION,
-					lae.getCause());
-			res.setErrorMessage(Constants.LOCKED_ACCOUNT_EXCEPTION);
+			return JsonUtil.genFailResultMessage("1004");
 		} catch (AuthenticationException ae) {
-			logger.error("{}{}", Constants.AUTHENTICATION_EXCEPTION,
-					ae.getCause());
-			res.setErrorMessage(Constants.AUTHENTICATION_EXCEPTION);
+			return JsonUtil.genFailResultMessage("1005");
 		} catch (Exception e) {
-			logger.error("{}{}", Constants.UNKNOWN_EXCEPTION, e.getCause());
-			res.setErrorMessage(Constants.UNKNOWN_EXCEPTION);
+			return JsonUtil.genFailResultMessage("1006");
 		}
-		return res;
+		return JsonUtil.genSuccessResultMessage();
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
@@ -143,9 +129,9 @@ public class MainController {
 		logger.debug("加载菜单!");
 		List<Right> rights = rightService.findAllRightByUserCode(SystemUtil
 				.currentUserCode());
-		logger.debug("权限:{}", rights);
+		logger.debug("权限__{}", rights);
 		if (rights == null || rights.size() == 0) {
-			return new ResultMessage(ResultMessage.FAIL, Constants.NO_RIGHTS);
+			return JsonUtil.genFailResultMessage("1007");
 		}
 		List<Menu> menus = new ArrayList<Menu>();
 		Menu menu = null;
@@ -162,7 +148,7 @@ public class MainController {
 		}
 		for (Menu mn : menus) {
 			for (Right right : rights) {
-				if (mn.getId().equals(right.getSuperRightId()+"")) {
+				if (mn.getId().equals(right.getSuperRightId() + "")) {
 					menu = new Menu();
 					menu.setId(right.getRightId() + "");
 					menu.setName(right.getRightName());

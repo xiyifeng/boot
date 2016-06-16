@@ -7,12 +7,12 @@ import com.xyf.boot.domain.base.PageBase;
 public class User extends PageBase {
 	private static final long serialVersionUID = -1542612948724816135L;
 
+	@NotNull(message = "用户号不能为空")
 	private String usercode;
 
 	@NotNull(message = "用户名不能为空")
 	private String username;
 
-	@NotNull(message = "密码不能为空")
 	private String password;
 
 	private String position;
@@ -21,6 +21,7 @@ public class User extends PageBase {
 
 	private String mobilPhone;
 
+	@NotNull(message = "状态不能为空")
 	private String status;
 
 	private String lang;

@@ -53,10 +53,10 @@ function login() {
 		error : function() {// 请求失败处理函数
 		},
 		success : function(data) {
-			if (data.status == '1') {
+			if (data.code == '0000') {
 				setTimeout("window.location.href='index'", 1000);
 			} else {
-				showError(data.message);
+				showError(data.code + "-" + data.message);
 			}
 		}
 	});

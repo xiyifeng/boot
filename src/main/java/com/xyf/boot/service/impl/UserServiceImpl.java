@@ -41,4 +41,14 @@ public class UserServiceImpl implements UserService {
 		return dao.selectTotalSize(user);
 	}
 
+	@Override
+	public void addUser(User user) {
+		dao.save(user);
+	}
+
+	@Override
+	public void updateUser(User user) {
+		dao.modify(user);
+	}
+
 }

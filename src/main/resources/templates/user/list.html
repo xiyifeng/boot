@@ -3,6 +3,9 @@
 	layout:decorator="content">
 <head>
 <title>用户管理</title>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+<script type="text/javascript" th:src="@{/custom/js/user.js}"
+	src="../../static/custom/js/user.js"></script>
 </head>
 <body>
 	<div layout:fragment="content" class="container"
@@ -27,101 +30,15 @@
 					<td><a id="searchId" href="javascript:doFind();"
 						class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
 					</td>
+					<td><a id="searchId" href="javascript:doAdd();"
+						class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
+					</td>
+					<td><a id="searchId" href="javascript:doModify();"
+						class="easyui-linkbutton" data-options="iconCls:'icon-edit'">变更</a>
+					</td>
 				</tr>
 			</table>
 		</form>
-		<script type="text/javascript">
-			$(function() {
-				$('#dg').datagrid({
-					url : '',
-					iconCls : 'icon-save',
-					width : 1200,
-					height : 450,
-					fitColumns : true,
-					singleSelect : true,
-					striped : false,
-					method : "post",
-					loadMsg : "数据加载中",
-					pagination : true,
-					rownumbers : true,
-					singleSelect : true,
-					pagePosition : "bottom",
-					toolbar : "#conds",
-					columns : [ [ {
-						field : 'usercode',
-						title : '用户号',
-						width : 80
-					}, {
-						field : 'username',
-						title : '用户名称',
-						width : 120
-					}, {
-						field : 'position',
-						title : '职位',
-						width : 100,
-						align : 'right'
-					}, {
-						field : 'email',
-						title : 'EMAIL',
-						width : 150,
-						align : 'right'
-					}, {
-						field : 'mobilPhone',
-						title : '移动号码',
-						width : 150
-					}, {
-						field : 'status',
-						title : '状态',
-						width : 60,
-						align : 'center'
-					}, {
-						field : 'lang',
-						title : '语言',
-						width : 60,
-						align : 'center'
-					}, {
-						field : 'theme',
-						title : '主题',
-						width : 60,
-						align : 'center'
-					} , {
-						field : 'errorLoginTimes',
-						title : '错误登陆次数',
-						width : 60,
-						align : 'center'
-					} , {
-						field : 'remark',
-						title : '备注',
-						width : 60,
-						align : 'center'
-					}] ],
-					onDblClickRow : function(rowIndex, rowData) {
-						showDetail(rowData.usercode);
-					}
-				});
-			});
-
-			function doFind() {
-				var o = serializeObject("#conds");
-				$("#dg").datagrid({
-					queryParams : o,
-					url : "/user/list"
-				});
-			}
-
-			// 详细信息展示
-			function showDetail(uuid) {
-				window.parent.$("#childUse").window({
-					title : "用户信息",
-					width : 1100,
-					height : 500,
-					collapsible : false,
-					modal : true,
-					inline : false,
-					href : "/user/detail/"+usercode
-				});
-			}
-		</script>
 		<div id="win"></div>
 	</div>
 

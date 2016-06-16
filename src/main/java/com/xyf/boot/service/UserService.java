@@ -33,4 +33,13 @@ public interface UserService {
 	 * @return 总记录数
 	 */
 	int selectTotalSize(User user);
+
+	/**
+	 * 用户新增
+	 * @param user 用户
+	 */
+	void addUser(User user);
+
+	
+	void updateUser(User user);
 }
