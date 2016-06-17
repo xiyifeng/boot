@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql
-Source Server Version : 50624
+Source Server         : boot
+Source Server Version : 50546
 Source Host           : localhost:3306
-Source Database       : test
+Source Database       : boot
 
 Target Server Type    : MYSQL
-Target Server Version : 50624
+Target Server Version : 50546
 File Encoding         : 65001
 
-Date: 2016-05-27 10:20:50
+Date: 2016-06-17 15:45:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -72,6 +72,10 @@ CREATE TABLE `h_right` (
 -- ----------------------------
 -- Records of h_right
 -- ----------------------------
+INSERT INTO `h_right` VALUES ('1001', '报文对比', '0', null, '1', 'D', 'icon-large-picture', null, '1', null, null, null, null, '');
+INSERT INTO `h_right` VALUES ('1002', '参数管理', '0', null, '1', 'D', 'icon-large-clipart', null, '1', null, null, null, null, null);
+INSERT INTO `h_right` VALUES ('1001001', '报文对比', '1001', '报文对比', '1', 'I', 'icon-large-shapes', '/replay', '1', null, null, null, null, null);
+INSERT INTO `h_right` VALUES ('1002001', '用户管理', '1002', '参数管理', '1', 'I', 'icon-large-smartart', '/user', '1', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for h_role
@@ -91,6 +95,7 @@ CREATE TABLE `h_role` (
 -- ----------------------------
 -- Records of h_role
 -- ----------------------------
+INSERT INTO `h_role` VALUES ('1001', '管理员', null, 'xiyf', '1010101', null, null);
 
 -- ----------------------------
 -- Table structure for h_role_right
@@ -104,6 +109,10 @@ CREATE TABLE `h_role_right` (
 -- ----------------------------
 -- Records of h_role_right
 -- ----------------------------
+INSERT INTO `h_role_right` VALUES ('1001', '1001');
+INSERT INTO `h_role_right` VALUES ('1001', '1002');
+INSERT INTO `h_role_right` VALUES ('1001', '1001001');
+INSERT INTO `h_role_right` VALUES ('1001', '1002001');
 
 -- ----------------------------
 -- Table structure for h_user
@@ -127,6 +136,8 @@ CREATE TABLE `h_user` (
 -- ----------------------------
 -- Records of h_user
 -- ----------------------------
+INSERT INTO `h_user` VALUES ('admin', '管理员', '123456', '1', 'admin@adtec.com.cn', '18988888888', '1', null, null, null, 'administrator');
+INSERT INTO `h_user` VALUES ('xiyf', '席义峰', 'xiyf', '1', 'xi.yifeng@aliyun.com', '18088888888', '1', null, null, null, 'administrator');
 
 -- ----------------------------
 -- Table structure for h_user_role
@@ -140,3 +151,4 @@ CREATE TABLE `h_user_role` (
 -- ----------------------------
 -- Records of h_user_role
 -- ----------------------------
+INSERT INTO `h_user_role` VALUES ('xiyf', '1001');
