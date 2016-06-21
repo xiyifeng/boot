@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * @date 2016年6月15日
  */
 @ControllerAdvice
-public class ExceptinoController {
+public class ExceptionController {
 
 	private static final Logger logger = LoggerFactory.getLogger(Logger.class);
 
 	@ExceptionHandler(Exception.class)
 	public String exception(Exception e) {
-		logger.info("系统错误，{}" , e.getCause());
+		logger.info("异常抛出，{}", e.getCause());
 		return "error/error";
 	}
-	
+
 }

@@ -1,13 +1,18 @@
 package com.xyf.boot.util;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
+import com.alibaba.fastjson.JSON;
 import com.xyf.boot.cache.ErrorCodeCache;
 import com.xyf.boot.domain.base.JsonResult;
 
@@ -154,4 +159,25 @@ public class JsonUtil {
 		return rs;
 	}
 
+	/**
+	 * 对象转换成Json格式字符串
+	 * @param httpServletResponse 响应
+	 * @param object 对象
+	 */
+	public static void OutputJson(HttpServletResponse httpServletResponse, Object object) {
+		PrintWriter out = null;
+		httpServletResponse.setContentType("application/json");
+		httpServletResponse.setCharacterEncoding("utf-8");
+		String json=null;
+		try {
+			out = httpServletResponse.getWriter();
+			json = JSON.toJSONString(object);
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error("转换Json失败，{}", e.getCause());
+		}
+		out.print(json);
+		out.close();
+	}
 }
+

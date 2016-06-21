@@ -44,11 +44,19 @@ function logout( type ) {
 				async : false,
 				cache : false,
 				type : "POST",
+				dataType : "json",
 				url : "logout",
 				error : function() {
 				},
 				success : function(json) {
-					location.replace("/");
+					if( json && json.code && json.code == '0000' )
+					{
+						location.replace("/");
+					}
+					else
+					{
+						$.messager.alert("提示", "系统退出失败!");
+					}
 				}
 			});
 		}

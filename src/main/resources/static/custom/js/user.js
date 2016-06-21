@@ -68,6 +68,9 @@ $(function() {
 	});
 });
 
+/**
+ * 查询
+ */
 function doFind() {
 	var o = serializeObject("#conds");
 	$("#dg").datagrid({
@@ -85,7 +88,7 @@ function showDetail(usercode) {
 		collapsible : false,
 		modal : true,
 		inline : false,
-		href : "/user/detail/" + usercode,
+		href : "/user/detail?usercode=" + usercode,
 		buttons : [ {
 			text : '&nbsp;取&nbsp;消&nbsp;',
 			iconCls : 'icon-cancel',
@@ -141,7 +144,7 @@ function doModify() {
 		collapsible : false,
 		modal : true,
 		inline : false,
-		href : "/user/detail/" + row.usercode,
+		href : "/user/detail?usercode=" + row.usercode,
 		buttons : [ {
 			text : '&nbsp;修&nbsp;改&nbsp;',
 			iconCls : 'icon-ok',
@@ -168,6 +171,21 @@ function doModify() {
  *            URL
  */
 function bootAjax(data, url) {
+	if( data instanceof Object )
+	{
+		data.ptStyle = "json";
+	}
+	else
+	{
+		if( data.length > 0 )
+		{
+			data += "&ptStyle=json";
+		}
+		else
+		{
+			data = "ptStyle=json";
+		}	
+	}
 	$.ajax({
 		type : "POST",
 		url : url,
@@ -178,13 +196,17 @@ function bootAjax(data, url) {
 		complete : function(xmlHttpRequest, textStatus)
 		{
 		},
-		success : function(msg) {
+		success : function(msg, textStatus) {
 			window.parent.$.messager.alert('提示', msg.code + "-" + msg.message);
 			if( msg.code == '0000' )
 			{
 				window.parent.$("#childUse").dialog('close');
 				doFind();
 			}
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown)
+		{
+			alert(XMLHttpRequest.responseText);
 		}
 	});
 }

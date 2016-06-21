@@ -113,12 +113,13 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public String logout(User user) {
+	@ResponseBody
+	public Object logout(User user) throws Exception {
 		Subject subject = SecurityUtils.getSubject();
 		logger.info("用户登出{}",
 				subject.getSession().getAttribute(Constants.KEY_USER));
 		subject.logout();
-		return "login";
+		return JsonUtil.genSuccessResultMessage();
 	}
 
 	@RequestMapping(value = "/loadMenu", method = RequestMethod.POST)
