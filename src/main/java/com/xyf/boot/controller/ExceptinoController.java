@@ -18,7 +18,7 @@ public class ExceptinoController {
 
 	@ExceptionHandler(Exception.class)
 	public String exception(Exception e) {
-		logger.info("系统错误，{}" + e.getCause());
+		logger.info("系统错误，{}" , e.getCause());
 		return "error/error";
 	}
 	
