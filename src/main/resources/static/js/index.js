@@ -6,10 +6,10 @@ function initMenu(){
 	$ma.accordion({animate:true,fit:true,border:true,selected:'0'});
 	$.post("loadMenu", {userName:""}, function(rsp) {
 		$.each(rsp,function(i,e){
-			var menulist;
+			var menulist = "";
 			if(e.child && e.child.length>0){
 				$.each(e.child,function(ci,ce){
-					menulist ="<a href=\"javascript:void(0);\" style=\"width:100px;margin:6px 6px 6px 6px;\" class=\"easyui-linkbutton\" data-options=\"size:'large',iconAlign:'top',plain:true,iconCls:'"+ce.iconCls+"'\" onclick=\"addItem('"+ce.name+"','" + ce.url +"','" + ce.iconCls + "');\">"+ce.name+"</a><br/>";
+					menulist += "<a href=\"javascript:void(0);\" style=\"width:100px;margin:6px 6px 6px 6px;\" class=\"easyui-linkbutton\" data-options=\"size:'large',iconAlign:'top',plain:true,iconCls:'"+ce.iconCls+"'\" onclick=\"addItem('"+ce.name+"','" + ce.url +"','" + ce.iconCls + "');\">"+ce.name+"</a><br/>";
 				});
 			}
 			$ma.accordion('add', {

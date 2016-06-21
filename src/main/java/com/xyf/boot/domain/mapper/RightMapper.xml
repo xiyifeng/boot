@@ -24,12 +24,12 @@
 	</resultMap>
 	<select id="findUserMenu" parameterType="string" resultMap="BaseResultMap" >
 		select a.* from h_right a,h_role_right b,h_role
-		c,h_user d,h_user_role
-		f
+		c,h_user d,h_user_role f
 		where a.right_id = b.right_id
 		and b.role_code = c.roleCode
 		and c.roleCode = f.role_code
 		and d.user_code = f.user_code
+		and a.right_type in ('D','I')
 		and d.user_code = #{usercode,jdbcType=VARCHAR}
 	</select>
 

@@ -49,7 +49,7 @@ public class MyShiro extends AuthorizingRealm {
 		String userCode = (String) principalCollection.fromRealm(getName())
 				.iterator().next();
 
-		logger.debug("授权操作{}", userCode);
+		logger.info("授权操作{}", userCode);
 		// 到数据库查是否有此对象
 		User user = userService.findByName(userCode);
 		if (user != null) {
@@ -78,7 +78,7 @@ public class MyShiro extends AuthorizingRealm {
 		User user = userService.findByName(token.getUsername());
 		if (user != null) {
 			setSession(Constants.KEY_USER, user);
-			return new SimpleAuthenticationInfo(user.getUsername(),
+			return new SimpleAuthenticationInfo(user.getUsercode(),
 					user.getPassword(), getName());
 		}
 		return null;
@@ -93,7 +93,7 @@ public class MyShiro extends AuthorizingRealm {
 		Subject currentUser = SecurityUtils.getSubject();
 		if (null != currentUser) {
 			Session session = currentUser.getSession();
-			logger.debug("Session默认会话时间为[" + session.getTimeout() + "]毫秒");
+			logger.info("Session默认会话时间为[" + session.getTimeout() + "]毫秒");
 			if (null != session) {
 				session.setAttribute(key, value);
 			}

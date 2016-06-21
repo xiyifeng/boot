@@ -26,7 +26,7 @@ public class FilterConfigure {
 		logger.debug("______load filter shiroFilter!<<<" + proxy);
 		return registration;
 	}
-	
+
 	@Bean
 	public FilterRegistrationBean characterEncodingFilter() {
 		FilterRegistrationBean registration = new FilterRegistrationBean();

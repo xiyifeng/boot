@@ -19,8 +19,6 @@ package com.xyf.boot.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -160,5 +158,10 @@ public class MainController {
 		}
 		logger.debug("菜单:{}", menus);
 		return menus;
+	}
+
+	@RequestMapping("/noRight")
+	public String error() {
+		return "error/noRight";
 	}
 }
