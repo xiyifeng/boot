@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 
-@SpringBootApplication
+@SpringBootApplication(exclude={org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration.class})
 @PropertySource(value = "classpath:conf/application.properties", ignoreResourceNotFound = false)
 @ImportResource({ "classpath:conf/ApplicationContext.xml" })
 public class WebApplication {

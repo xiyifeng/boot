@@ -4,6 +4,7 @@ encoding//src/main/resources=UTF-8
 encoding//src/main/resources/templates/content.html=UTF-8
 encoding//src/main/resources/templates/error/error.html=UTF-8
 encoding//src/main/resources/templates/error/noRight.html=UTF-8
+encoding//src/main/resources/templates/index.html=UTF-8
 encoding//src/main/resources/templates/layout.html=UTF-8
 encoding//src/main/resources/templates/replay/detail.html=UTF-8
 encoding//src/main/resources/templates/replay/list.html=UTF-8

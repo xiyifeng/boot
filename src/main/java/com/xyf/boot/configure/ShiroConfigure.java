@@ -24,9 +24,9 @@ import com.xyf.boot.shiro.MyShiro;
  * @date 2016年6月20日
  */
 //@Configuration
-public class ShiroConfiguration {
+public class ShiroConfigure {
 	private static final Logger logger = LoggerFactory
-			.getLogger(ShiroConfiguration.class);
+			.getLogger(ShiroConfigure.class);
 
 	public EhCacheManager getEhCacheManager() {
 		EhCacheManager em = new EhCacheManager();

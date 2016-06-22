@@ -45,7 +45,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<!-- 权限配置 -->
 		<property name="filterChainDefinitions">
 			<value>
-				/ = anon
 				/css/**= anon
 				/custom/** = anon
 				/js/** = anon

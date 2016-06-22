@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-	layout:decorator="layout">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: common_header(~{::title},~{::link},~{::script})">
 <title>HEAD</title>
+<link></link>
+<script type="text/javascript"></script>
 </head>
-<body>
-	<div layout:fragment="content" title="首页" style="padding:5px">
-		<div style="margin:10% 26%; font-size:28px;">Welcome to Replay
-			System !</div>
-	</div>
+<body th:insert="layout :: mainContent" >
 </body>
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
-<head>
-<title>Layout</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common_header(title,links,scripts)">
+<title th:replace="${title}">Layout</title>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/easyui.css}"
 	href="../../static/css/easyui.css" />
 <link rel="stylesheet" type="text/css" th:href="@{/css/icon.css}"
 	href="../../static/css/icon.css" />
+
+<th:block th:replace="${links}" />
 <script type="text/javascript" th:src="@{/js/jquery.min.js}"
 	src="../../static/js/jquery.min.js"></script>
 <script type="text/javascript" th:src="@{/js/util.js}"
@@ -31,8 +33,11 @@
 		}
 	}
 </script>
+
+<th:block th:replace="${scripts}" />
 </head>
-<body class="easyui-layout" style="border:1">
+<body class="easyui-layout" style="border:1"
+	th:fragment="mainContent">
 	<div data-options="region:'north',height:'98px'">
 		<div style="position:relative;">
 			<img th:src="@{/css/icons/logo.jpg}"
@@ -62,10 +67,14 @@
 	<div class="easyui-tabs"
 		data-options="region:'center',fit:true,border:false,plain:true"
 		id="main_tabs">
-		<div layout:fragment="content">content</div>
+		<div title="首页" style="padding:5px" id="indexPage">
+			<div style="margin:10% 26%; font-size:28px;">Welcome to Replay
+				System !</div>
+		</div>
 	</div>
 	<div data-options="region:'south',height:'20px',background:'pink'">
-		<div style="margin-left:600px">Copyright @ xiyifeng      2016 - 2020 All rights reserved </div>
+		<div style="margin-left:600px">Copyright @ xiyifeng 2016 - 2020
+			All rights reserved</div>
 	</div>
 	<div id="childUse"></div>
 </body>

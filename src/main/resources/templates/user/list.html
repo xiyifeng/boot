@@ -1,17 +1,14 @@
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-	layout:decorator="content">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="content :: common_header(~{::title},~{::link},~{::script})">
 <title>用户管理</title>
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+<link/>
 <script type="text/javascript" th:src="@{/custom/js/user.js}"
 	src="../../static/custom/js/user.js"></script>
 </head>
 <body>
-	<div layout:fragment="content" class="container"
-		style="height:400px;width:600px;margin: 1px 1px 1px 1px;">
+	<div class="container" style="height:420px;width:600px;margin: 1px 1px 1px 1px;">
 		<table id="dg"></table>
-		<form id="conds">
+		<form id="conds" style="margin: 0 0 0 0">
 			<table>
 				<tr>
 					<td style="width:60px;"><p align="center">用户号</p></td>

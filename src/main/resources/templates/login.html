@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-	layout:decorator="content">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="content :: common_header(~{::title},~{::link},~{::script})">
 <meta charset="UTF-8" />
 <title>Replay System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +17,7 @@
 <script type="text/javascript" th:src="@{/js/login.js}"></script>
 </head>
 <body>
-	<div class="container" layout:fragment="content">
+	<div class="container" th:fragment="content">
 		<section style="margin-top:10%;">
 			<div id="container_demo">
 				<a class="hiddenanchor" id="toregister"></a> <a class="hiddenanchor"

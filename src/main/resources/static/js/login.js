@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 	// 点击登录
 	$('#loginButton').click(function(e) {
+		alert('dod');
 		submit();
 	});
 
