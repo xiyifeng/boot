@@ -18,7 +18,7 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 import com.xyf.boot.shiro.MyShiro;
 
 /**
- * Shiro 配置
+ * Shiro 配置(暂未用）
  * 
  * @author xiyifeng
  * @date 2016年6月20日

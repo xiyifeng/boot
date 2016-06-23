@@ -16,6 +16,7 @@ package com.xyf.boot.service;
 import java.util.List;
 
 import com.xyf.boot.domain.FmtCode;
+import com.xyf.boot.domain.info.FmtDetail;
 
 /**
  * @author Rob Winch
@@ -33,5 +34,7 @@ public interface FmtCodeService {
 	List<FmtCode> selectEverPage(FmtCode fmtCode);
 	
 	int selectTotalSize(FmtCode fmtCode);
+
+	FmtDetail findFmtMessageByUuid(String uuid);
 
 }

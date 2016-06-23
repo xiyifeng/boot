@@ -46,22 +46,9 @@ public class ReplayController {
 	public String showDetail(@PathVariable("uuid") String uuid,
 			ModelMap modelMap) {
 		logger.debug("传入参数: " + uuid);
-		FmtCode fmtCode = fmtCodeService.findFmtCode(uuid);
-		FmtDetail fmtDetail = new FmtDetail();
-		fmtDetail.setUuid(fmtCode.getUuid());
-		fmtDetail.setResponseMsg(crtData());
-		fmtDetail.setNewResponseMsg(fmtDetail.getResponseMsg());
-		fmtDetail.setCompResult(fmtDetail.getResponseMsg());
+		FmtDetail fmtDetail  = fmtCodeService.findFmtMessageByUuid(uuid);
 		modelMap.addAttribute("fmtCode", fmtDetail);
 		return "replay/detail";
-	}
-
-	private String crtData() {
-		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < 100; i++) {
-			sb.append("<root>abcdefg</root>");
-		}
-		return sb.toString();
 	}
 
 }
