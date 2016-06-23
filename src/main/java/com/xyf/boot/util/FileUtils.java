@@ -32,6 +32,10 @@ public class FileUtils {
 		StringBuilder sb = new StringBuilder();
 		String str = null;
 		try {
+			if( !file.exists() )
+			{
+				return "无内容";
+			}
 			br = new BufferedReader(new FileReader(file));
 			while ((str = br.readLine()) != null) {
 				sb.append(str);
