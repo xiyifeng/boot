@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50546
 File Encoding         : 65001
 
-Date: 2016-06-17 15:45:23
+Date: 2016-06-23 16:39:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,19 +33,19 @@ CREATE TABLE `h_fmt_code` (
 -- ----------------------------
 -- Records of h_fmt_code
 -- ----------------------------
-INSERT INTO `h_fmt_code` VALUES ('11110', '1001', '1', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11111', '1001', '2', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11112', '1001', '3', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11113', '1001', '4', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11114', '1001', '5', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11115', '1001', '6', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11116', '1001', '7', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11117', '1001', '8', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11118', '1001', '9', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11119', '1001', '10', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11121', '1001', '11', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('11122', '1001', '12', '10101010', '100101011', '1', '1');
-INSERT INTO `h_fmt_code` VALUES ('22222', '1001', '13', '10101010', '100101011', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11110', '1001', '1', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11111', '1001', '2', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11112', '1001', '3', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11113', '1001', '4', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11114', '1001', '5', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11115', '1001', '6', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11116', '1001', '7', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11117', '1001', '8', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11118', '1001', '9', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11119', '1001', '10', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11121', '1001', '11', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('11122', '1001', '12', '1466668826535', '1466668826535', '1', '1');
+INSERT INTO `h_fmt_code` VALUES ('22222', '1001', '13', '1466668826535', '1466668826535', '1', '1');
 
 -- ----------------------------
 -- Table structure for h_right
@@ -76,6 +76,8 @@ INSERT INTO `h_right` VALUES ('1001', '报文对比', '0', null, '1', 'D', 'icon
 INSERT INTO `h_right` VALUES ('1002', '参数管理', '0', null, '1', 'D', 'icon-large-clipart', null, '1', null, null, null, null, null);
 INSERT INTO `h_right` VALUES ('1001001', '报文对比', '1001', '报文对比', '1', 'I', 'icon-large-shapes', '/replay', '1', null, null, null, null, null);
 INSERT INTO `h_right` VALUES ('1002001', '用户管理', '1002', '参数管理', '1', 'I', 'icon-large-smartart', '/user', '1', null, null, null, null, null);
+INSERT INTO `h_right` VALUES ('1002002', '用户查询', '1002', '用户查询', '1', 'T', null, '/user/list', '1', null, null, null, null, null);
+INSERT INTO `h_right` VALUES ('1002003', '用户详细信息查询', '1002', '用户详细信息查询', '1', 'T', null, '/user/detail', '1', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for h_role
@@ -113,6 +115,8 @@ INSERT INTO `h_role_right` VALUES ('1001', '1001');
 INSERT INTO `h_role_right` VALUES ('1001', '1002');
 INSERT INTO `h_role_right` VALUES ('1001', '1001001');
 INSERT INTO `h_role_right` VALUES ('1001', '1002001');
+INSERT INTO `h_role_right` VALUES ('1001', '1002002');
+INSERT INTO `h_role_right` VALUES ('1001', '1002003');
 
 -- ----------------------------
 -- Table structure for h_user
@@ -136,7 +140,7 @@ CREATE TABLE `h_user` (
 -- ----------------------------
 -- Records of h_user
 -- ----------------------------
-INSERT INTO `h_user` VALUES ('admin', '管理员', '123456', '1', 'admin@adtec.com.cn', '18988888888', '1', null, null, null, 'administrator');
+INSERT INTO `h_user` VALUES ('admin', '管理员', 'admin', '1', 'admin@adtec.com.cn', '18988888888', '1', null, null, null, 'administrator');
 INSERT INTO `h_user` VALUES ('xiyf', '席义峰', 'xiyf', '1', 'xi.yifeng@aliyun.com', '18088888888', '1', null, null, null, 'administrator');
 
 -- ----------------------------
