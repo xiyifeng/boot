@@ -52,7 +52,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 				/error = anon
 				/errors = anon
 				/user/** = authc,bootc
-				/index = user
 				/** = authc
 			</value>
 		</property>

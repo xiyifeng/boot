@@ -45,7 +45,7 @@ public class ThymeleafConfigure implements ApplicationContextAware {
 		resolver.setApplicationContext(applicationContext);
 		resolver.setPrefix("classpath:/templates/");
 		resolver.setSuffix(".html");
-		resolver.setCacheable(true);
+		resolver.setCacheable(false);
 		resolver.setCharacterEncoding("UTF8");
 		resolver.setTemplateMode(TemplateMode.HTML);
 		return resolver;

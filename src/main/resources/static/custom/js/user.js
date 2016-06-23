@@ -2,8 +2,8 @@ $(function() {
 	$('#dg').datagrid({
 		url : '',
 		iconCls : 'icon-save',
-		width : $(document).width()-138,
-		height : $(document).height()-188,
+		width : $(document).width()-25,
+		height : $(document).height()-50,
 		fitColumns : true,
 		singleSelect : true,
 		striped : false,
