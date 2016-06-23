@@ -1,8 +1,8 @@
 $(document).ready(function() {
-
+	getCookie();
+	
 	// 点击登录
 	$('#loginButton').click(function(e) {
-		alert('dod');
 		submit();
 	});
 
@@ -43,8 +43,16 @@ function login() {
 	var actionurl = $('form').attr('action');
 	var formData = new Object();
 	var data = $(":input").each(function() {
-		formData[this.name] = $("#" + this.name).val();
+		if( this.name == 'remenberMe')
+		{
+			formData[this.name] = $("#"+this.name).is(':checked'); 
+		}
+		else
+		{
+			formData[this.name] = $("#" + this.name).val();
+		}
 	});
+	setCookie();
 	$.ajax({
 		async : false,
 		cache : false,
@@ -61,4 +69,31 @@ function login() {
 			}
 		}
 	});
+}
+
+//设置cookie
+function setCookie()
+{
+	if ( $("#remenberMe").is(':checked') == true) {
+		$("input[iscookie='true']").each(function() {
+			$.cookie(this.name, $("#"+this.name).val(), "/",24);
+		});
+		$.cookie("COOKIE_NAME","true", "/",24);
+	} else {
+		$("input[iscookie='true']").each(function() {
+			$.cookie(this.name,null);
+		});
+		$.cookie("COOKIE_NAME",null);
+	}
+}
+//读取cookie
+function getCookie()
+{
+	var COOKIE_NAME=$.cookie("COOKIE_NAME");
+	if (COOKIE_NAME !=null) {
+		$("input[iscookie='true']").each(function() {
+			$($("#"+this.name).val($.cookie(this.name)));
+		});
+		$("#remenberMe").attr("checked", true);
+	} 
 }

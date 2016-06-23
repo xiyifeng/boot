@@ -34,6 +34,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -81,16 +82,16 @@ public class MainController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public Object login(User user, BindingResult bindingResult,
+	public Object login(User user, @RequestParam("remenberMe") boolean remenberMe,BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
-		logger.info("登陆用户{} ", user);
+		logger.info("登陆用户{} 记住我{}", user, remenberMe);
 		if (bindingResult.hasErrors()) {
 			return JsonUtil.genResultMessage(bindingResult);
 		}
 
 		Subject subject = SecurityUtils.getSubject();
 		UsernamePasswordToken token = new UsernamePasswordToken(
-				user.getUsercode(), user.getPassword());
+				user.getUsercode(), user.getPassword(), remenberMe);
 		try {
 			subject.login(token);
 		} catch (UnknownSessionException use) {

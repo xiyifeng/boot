@@ -15,6 +15,7 @@
 	th:href="@{/custom/css/animate-custom.css}"
 	href="css/animate-custom.css" />
 <script type="text/javascript" th:src="@{/js/login.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.cookie.js}"></script>
 </head>
 <body>
 	<div class="container" th:fragment="content">
@@ -28,18 +29,18 @@
 							<h1>Replay System</h1>
 							<p>
 								<label for="usercode" class="uname" data-icon="u">用户名</label> <input
-									id="usercode" name="usercode" type="text"
+									id="usercode" name="usercode" type="text" iscookie="true"
 									placeholder="eg. username" nullmsg="用户名不能 为空!" />
 							</p>
 							<p>
 								<label for="password" class="youpasswd" data-icon="p">
 									密码 </label> <input id="password" name="password" 
-									type="password" placeholder="eg. X8df!90EO"
+									type="password" placeholder="eg. password" iscookie="true"
 									nullmsg="密码不能为空!" />
 							</p>
 							<p class="keeplogin">
-								<input type="checkbox" name="loginkeeping" id="loginkeeping"
-									value="loginkeeping" /> <label for="loginkeeping">记住我</label>
+								<input type="checkbox" name="remenberMe" id="remenberMe"/> 
+								<label for="remenberMe">记住我</label>
 							</p>
 							<p class="login button">
 								<input type="button" value="登陆" id="loginButton" />
