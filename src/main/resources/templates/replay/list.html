@@ -1,17 +1,16 @@
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-	layout:decorator="content">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="content :: common_header(~{::title},~{::link},~{::script})">
 <title>回放服务</title>
+<link/>
+<script type="text/javascript"></script>
 </head>
 <body>
-	<div layout:fragment="content" class="container"
-		style="height:400px;width:600px;margin: 1px 1px 1px 1px;">
+	<div class="container" style="height:400px;width:600px;margin: 1px 1px 1px 1px;">
 		<table id="dg"></table>
 		<form id="conds">
-			<table>
+			<table style="height:42px;font-size:12px;">
 				<tr>
-					<td style="width:60px;"><p align="center">对比结果</p></td>
+					<td style="width:80px;"><p align="center">对比结果</p></td>
 					<td><input id="diffCode" class="easyui-combobox"
 						name="diffCode"
 						data-options="valueField:'id',textField:'text',value:'1',data:[{'id':1,'text':'1-相同'},{'id':2,'text':'2-不同'}]" />
