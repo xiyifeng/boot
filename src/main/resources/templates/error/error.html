@@ -6,11 +6,14 @@
 <link rel="stylesheet" type="text/css" th:href="@{/custom/css/form.css}"
 	href="../../static/custom/css/form.css" />
 </head>
-<body>
-	<div style="margin: 10px 8% 8% 8%;">
+<body bgcolor="rgb(77,88,98)">
+	<div style="margin: 10px 8% 8% 8%;>
 		<h1>异常</h1>
 		<p>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统错误！
+		<img th:src="@{/css/icon/tip.png}">
+		<b th:text="${message}" style="margin-left:40px;">
+			系统错误！
+		</b>
 		</p>
 	</div>
 </body>

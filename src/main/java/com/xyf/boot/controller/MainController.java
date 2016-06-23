@@ -75,7 +75,6 @@ public class MainController {
 
 	@RequestMapping("/index")
 	public String index() {
-		// boolean dn = SecurityUtils.getSubject().isPermitted("/index");
 		logger.info("进入主页面");
 		return "index";
 	}
@@ -165,4 +164,5 @@ public class MainController {
 	public String error() {
 		return "error/noRight";
 	}
+	
 }
