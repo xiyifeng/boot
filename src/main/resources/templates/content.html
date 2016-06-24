@@ -3,9 +3,9 @@
 <head th:fragment="common_header(title,links,scripts)">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
 <title th:replace="${title}"></title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/easyui.css}"
+<link rel="stylesheet" type="text/css" th:href="@{/themes/default/easyui.css}"
 	href="../../static/css/easyui.css" />
-<link rel="stylesheet" type="text/css" th:href="@{/css/icon.css}"
+<link rel="stylesheet" type="text/css" th:href="@{/themes/icon.css}"
 	href="../../static/css/icon.css" />
 
 <th:block th:replace="${links}" />

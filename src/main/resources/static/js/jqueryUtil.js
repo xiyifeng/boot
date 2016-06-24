@@ -477,12 +477,12 @@
 	jqueryUtil.chgSkin=function(selectId,cookiesColor){
         	 docchgskin(document,selectId,cookiesColor);
             $("iframe").each(function (){   
-                var dc=this.contentWindow.document;
-                docchgskin(dc,selectId,cookiesColor);
+                var doc=this.contentWindow.document;
+                docchgskin(doc,selectId,cookiesColor);
             });
-            function docchgskin(dc,selectId,cookiesColor){
-						removejscssfile(dc,"themes/"+cookiesColor+"/easyui.css", "css");
-                        createLink(dc,"themes/"+selectId+"/easyui.css");
+            function docchgskin(doc,selectId,cookiesColor){
+						removejscssfile(doc,"themes/"+cookiesColor+"/easyui.css", "css");
+                        createLink(doc,"themes/"+selectId+"/easyui.css");
         	}
             function createLink(dc,url){
 		    	var urls = url.replace(/[,]\s*$/ig,"").split(",");
