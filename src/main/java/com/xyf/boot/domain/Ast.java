@@ -1,9 +1,13 @@
 package com.xyf.boot.domain;
 
-@setters
-@getters
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Map;
+
+@Getter
+@Setter
 public class Ast {
     private String name;
-    private integer age;
+    private Map<String, String> data;
 }
-
