@@ -1,7 +1,7 @@
 package com.xyf.boot.domain;
 
-@getter
-@setter
+@setters
+@getters
 public class Ast {
     private String name;
     private integer age;
