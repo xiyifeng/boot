@@ -1,1 +1,13 @@
 /target/
+# Compiled class file
+*.class
+*.idea
+*.myeclipse
+*.settings
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+*logs*
