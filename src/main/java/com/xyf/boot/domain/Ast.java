@@ -21,7 +21,7 @@ public class Ast {
     }
 
     public void Te22st(){
-        System.out.print("11"+"1233333");
+        System.out.print("11"+"1233333222222");
         System.out.print("test1100188"+"222");
     }
 
