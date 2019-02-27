@@ -15,8 +15,8 @@ public class Ast {
     // mod by 002;
     // mod by 003;
 
-    public void test01(){
-        System.out.print("sssssss");
+    public void Test(){
+        System.out.print("test001");
     }
 
 }
