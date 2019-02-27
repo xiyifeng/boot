@@ -15,9 +15,9 @@ public class Ast {
     // mod by 002;
     // mod by 003;
 
-    public void Test(){
-        System.out.print("1233333");
-        System.out.print("test1100188");
+    public void Te22st(){
+        System.out.print("11"+"1233333");
+        System.out.print("test1100188"+"222");
     }
 
 }
