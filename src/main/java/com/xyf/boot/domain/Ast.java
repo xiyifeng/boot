@@ -16,7 +16,8 @@ public class Ast {
     // mod by 003;
 
     public void Test(){
-        System.out.print("test001");
+        System.out.print("1233333");
+        System.out.print("test1100188");
     }
 
 }
